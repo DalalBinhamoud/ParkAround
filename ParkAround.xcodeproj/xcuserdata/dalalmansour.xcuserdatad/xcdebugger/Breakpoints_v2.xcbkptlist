@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C073B299-5AC6-4669-A454-319853D5BF9A"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4039C441-00DF-46CE-88E2-E25A80026E7C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ParkAround/Sources/Features/Parking/ParkingData/Sources/ParkingRepository/ParkingRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "fetchParkingSpots(userLocation:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4039C441-00DF-46CE-88E2-E25A80026E7C - d421594b93cbb38b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for ParkAround.ParkingRepository.fetchParkingSpots(userLocation: ParkAround.GeoLocation) async throws -&gt; Swift.Array&lt;ParkAround.ParkingDetails&gt;"
+                  moduleName = "ParkAround"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dalalmansour/Desktop/SAMI/ParkAround/ParkAround/Sources/Features/Parking/ParkingData/Sources/ParkingRepository/ParkingRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "102">
+               </Location>
+               <Location
+                  uuid = "4039C441-00DF-46CE-88E2-E25A80026E7C - f72279d881ff80cf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for ParkAround.ParkingRepository.fetchParkingSpots(userLocation: ParkAround.GeoLocation) async throws -&gt; Swift.Array&lt;ParkAround.ParkingDetails&gt;"
+                  moduleName = "ParkAround"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dalalmansour/Desktop/SAMI/ParkAround/ParkAround/Sources/Features/Parking/ParkingData/Sources/ParkingRepository/ParkingRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "4039C441-00DF-46CE-88E2-E25A80026E7C - c29d6bb2ee00778d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for ParkAround.ParkingRepository.fetchParkingSpots(userLocation: ParkAround.GeoLocation) async throws -&gt; Swift.Array&lt;ParkAround.ParkingDetails&gt;"
+                  moduleName = "ParkAround"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dalalmansour/Desktop/SAMI/ParkAround/ParkAround/Sources/Features/Parking/ParkingData/Sources/ParkingRepository/ParkingRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "61">
+               </Location>
+               <Location
+                  uuid = "4039C441-00DF-46CE-88E2-E25A80026E7C - c5cf8d464b25958c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for ParkAround.ParkingRepository.fetchParkingSpots(userLocation: ParkAround.GeoLocation) async throws -&gt; Swift.Array&lt;ParkAround.ParkingDetails&gt;"
+                  moduleName = "ParkAround"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dalalmansour/Desktop/SAMI/ParkAround/ParkAround/Sources/Features/Parking/ParkingData/Sources/ParkingRepository/ParkingRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "53">
+               </Location>
+               <Location
+                  uuid = "4039C441-00DF-46CE-88E2-E25A80026E7C - c5cf8d464b25958c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for ParkAround.ParkingRepository.fetchParkingSpots(userLocation: ParkAround.GeoLocation) async throws -&gt; Swift.Array&lt;ParkAround.ParkingDetails&gt;"
+                  moduleName = "ParkAround"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dalalmansour/Desktop/SAMI/ParkAround/ParkAround/Sources/Features/Parking/ParkingData/Sources/ParkingRepository/ParkingRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "73">
+               </Location>
+               <Location
+                  uuid = "4039C441-00DF-46CE-88E2-E25A80026E7C - d421594b93cbb38b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for ParkAround.ParkingRepository.fetchParkingSpots(userLocation: ParkAround.GeoLocation) async throws -&gt; Swift.Array&lt;ParkAround.ParkingDetails&gt;"
+                  moduleName = "ParkAround"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dalalmansour/Desktop/SAMI/ParkAround/ParkAround/Sources/Features/Parking/ParkingData/Sources/ParkingRepository/ParkingRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "105">
+               </Location>
+               <Location
+                  uuid = "4039C441-00DF-46CE-88E2-E25A80026E7C - c29d6bb2ee00778d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for ParkAround.ParkingRepository.fetchParkingSpots(userLocation: ParkAround.GeoLocation) async throws -&gt; Swift.Array&lt;ParkAround.ParkingDetails&gt;"
+                  moduleName = "ParkAround"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dalalmansour/Desktop/SAMI/ParkAround/ParkAround/Sources/Features/Parking/ParkingData/Sources/ParkingRepository/ParkingRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "81">
+               </Location>
+               <Location
+                  uuid = "4039C441-00DF-46CE-88E2-E25A80026E7C - d421594b93cbb3aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for ParkAround.ParkingRepository.fetchParkingSpots(userLocation: ParkAround.GeoLocation) async throws -&gt; Swift.Array&lt;ParkAround.ParkingDetails&gt;"
+                  moduleName = "ParkAround"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dalalmansour/Desktop/SAMI/ParkAround/ParkAround/Sources/Features/Parking/ParkingData/Sources/ParkingRepository/ParkingRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "280">
+               </Location>
+               <Location
+                  uuid = "4039C441-00DF-46CE-88E2-E25A80026E7C - f72279d881ff80ee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for ParkAround.ParkingRepository.fetchParkingSpots(userLocation: ParkAround.GeoLocation) async throws -&gt; Swift.Array&lt;ParkAround.ParkingDetails&gt;"
+                  moduleName = "ParkAround"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dalalmansour/Desktop/SAMI/ParkAround/ParkAround/Sources/Features/Parking/ParkingData/Sources/ParkingRepository/ParkingRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "4039C441-00DF-46CE-88E2-E25A80026E7C - c29d6bb2ee0077ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for ParkAround.ParkingRepository.fetchParkingSpots(userLocation: ParkAround.GeoLocation) async throws -&gt; Swift.Array&lt;ParkAround.ParkingDetails&gt;"
+                  moduleName = "ParkAround"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dalalmansour/Desktop/SAMI/ParkAround/ParkAround/Sources/Features/Parking/ParkingData/Sources/ParkingRepository/ParkingRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "81">
+               </Location>
+               <Location
+                  uuid = "4039C441-00DF-46CE-88E2-E25A80026E7C - c5cf8d464b2595ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for ParkAround.ParkingRepository.fetchParkingSpots(userLocation: ParkAround.GeoLocation) async throws -&gt; Swift.Array&lt;ParkAround.ParkingDetails&gt;"
+                  moduleName = "ParkAround"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dalalmansour/Desktop/SAMI/ParkAround/ParkAround/Sources/Features/Parking/ParkingData/Sources/ParkingRepository/ParkingRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "53">
+               </Location>
+               <Location
+                  uuid = "4039C441-00DF-46CE-88E2-E25A80026E7C - c5cf8d464b2595ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for ParkAround.ParkingRepository.fetchParkingSpots(userLocation: ParkAround.GeoLocation) async throws -&gt; Swift.Array&lt;ParkAround.ParkingDetails&gt;"
+                  moduleName = "ParkAround"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dalalmansour/Desktop/SAMI/ParkAround/ParkAround/Sources/Features/Parking/ParkingData/Sources/ParkingRepository/ParkingRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "73">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
