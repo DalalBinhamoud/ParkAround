@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E42352FE2D26C99F003E28D8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42352FD2D26C99F003E28D8 /* SplashView.swift */; };
+		E42353022D26C9FD003E28D8 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42353012D26C9FD003E28D8 /* PrimaryButton.swift */; };
+		E42353042D26CA72003E28D8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42353032D26CA72003E28D8 /* MainView.swift */; };
 		E47090772D22FF48005C3F43 /* ParkAroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090762D22FF48005C3F43 /* ParkAroundApp.swift */; };
 		E470907B2D22FF4A005C3F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E470907A2D22FF4A005C3F43 /* Assets.xcassets */; };
 		E470907E2D22FF4A005C3F43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E470907D2D22FF4A005C3F43 /* Preview Assets.xcassets */; };
@@ -28,7 +31,6 @@
 		E47090DA2D2303CB005C3F43 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090D92D2303CB005C3F43 /* NetworkClient.swift */; };
 		E47090DC2D2303D5005C3F43 /* NetworkClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090DB2D2303D5005C3F43 /* NetworkClientProtocol.swift */; };
 		E47090E52D2313AD005C3F43 /* DesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090E42D2313AD005C3F43 /* DesignTokens.swift */; };
-		E47090EE2D232EDC005C3F43 /* ActiveSessionTimerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090ED2D232EDC005C3F43 /* ActiveSessionTimerSpy.swift */; };
 		E47090F02D232F4F005C3F43 /* LocationManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090EF2D232F4F005C3F43 /* LocationManagerMock.swift */; };
 		E47090F22D233779005C3F43 /* ApplicationServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090F12D233779005C3F43 /* ApplicationServiceMock.swift */; };
 		E47090F42D2337CE005C3F43 /* NetworkClientMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090F32D2337CE005C3F43 /* NetworkClientMock.swift */; };
@@ -100,6 +102,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E42352FD2D26C99F003E28D8 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		E42353012D26C9FD003E28D8 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		E42353032D26CA72003E28D8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E47090732D22FF48005C3F43 /* ParkAround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkAround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E47090762D22FF48005C3F43 /* ParkAroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkAroundApp.swift; sourceTree = "<group>"; };
 		E470907A2D22FF4A005C3F43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,7 +129,6 @@
 		E47090D92D2303CB005C3F43 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		E47090DB2D2303D5005C3F43 /* NetworkClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientProtocol.swift; sourceTree = "<group>"; };
 		E47090E42D2313AD005C3F43 /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
-		E47090ED2D232EDC005C3F43 /* ActiveSessionTimerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSessionTimerSpy.swift; sourceTree = "<group>"; };
 		E47090EF2D232F4F005C3F43 /* LocationManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerMock.swift; sourceTree = "<group>"; };
 		E47090F12D233779005C3F43 /* ApplicationServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationServiceMock.swift; sourceTree = "<group>"; };
 		E47090F32D2337CE005C3F43 /* NetworkClientMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClientMock.swift; sourceTree = "<group>"; };
@@ -203,6 +207,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E42352FC2D26C990003E28D8 /* AppLaunch */ = {
+			isa = PBXGroup;
+			children = (
+				E42352FD2D26C99F003E28D8 /* SplashView.swift */,
+			);
+			path = AppLaunch;
+			sourceTree = "<group>";
+		};
+		E42352FF2D26C9EE003E28D8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E42353002D26C9F3003E28D8 /* Buttons */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		E42353002D26C9F3003E28D8 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				E42353012D26C9FD003E28D8 /* PrimaryButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		E470906A2D22FF48005C3F43 = {
 			isa = PBXGroup;
 			children = (
@@ -275,11 +303,13 @@
 		E47090A12D22FF6F005C3F43 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E42352FC2D26C990003E28D8 /* AppLaunch */,
 				E4E2CDD52D25345800ABC583 /* LocationDisabled */,
 				E4E2CDCE2D252ECB00ABC583 /* Welcome */,
 				E47090C22D2302BF005C3F43 /* AppComponent.swift */,
 				E47090C42D2302D3005C3F43 /* AppCoordinator.swift */,
 				E47090C62D2302DA005C3F43 /* AppCoordinatorView.swift */,
+				E42353032D26CA72003E28D8 /* MainView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -414,6 +444,7 @@
 		E47090DF2D230D03005C3F43 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E42352FF2D26C9EE003E28D8 /* Components */,
 				E47090E32D231383005C3F43 /* DesignTokens */,
 				E47090E02D230D10005C3F43 /* Extensions */,
 			);
@@ -490,7 +521,6 @@
 		E47090EC2D232EB9005C3F43 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				E47090ED2D232EDC005C3F43 /* ActiveSessionTimerSpy.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -986,13 +1016,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E470914D2D23F609005C3F43 /* GeoLocation.swift in Sources */,
+				E42353042D26CA72003E28D8 /* MainView.swift in Sources */,
 				E47090D62D2303AF005C3F43 /* HTTPFields.swift in Sources */,
 				E47090C52D2302D3005C3F43 /* AppCoordinator.swift in Sources */,
 				E47090B02D2300E3005C3F43 /* AlertWrapperView.swift in Sources */,
 				E4E2CDCD2D25276100ABC583 /* HomeCoordinatorView.swift in Sources */,
 				E4F0D2222D2599D800017BAA /* ApplicationServiceProtocol.swift in Sources */,
 				E47091282D23B30F005C3F43 /* ParkingServiceSpy.swift in Sources */,
-				E47090EE2D232EDC005C3F43 /* ActiveSessionTimerSpy.swift in Sources */,
 				E47091142D23AC4C005C3F43 /* ParkingRepository.swift in Sources */,
 				E47090CD2D230346005C3F43 /* LocationManager.swift in Sources */,
 				E47090B82D230160005C3F43 /* ApplicationService.swift in Sources */,
@@ -1002,6 +1032,7 @@
 				E4E2CDE82D2559B300ABC583 /* TimerManager.swift in Sources */,
 				E470910E2D23A7BB005C3F43 /* NearbyParkingSpotsRequest.swift in Sources */,
 				E4E2CDCB2D25275900ABC583 /* HomeCoordinator.swift in Sources */,
+				E42353022D26C9FD003E28D8 /* PrimaryButton.swift in Sources */,
 				E47091482D23CE05005C3F43 /* ParkingCoordinator.swift in Sources */,
 				E47090F22D233779005C3F43 /* ApplicationServiceMock.swift in Sources */,
 				E470910C2D239F7B005C3F43 /* ApiRequest.swift in Sources */,
@@ -1046,6 +1077,7 @@
 				E4E2CDDE2D253FD500ABC583 /* ParkingSpotsMapViewModel.swift in Sources */,
 				E4E2CDE52D2554A700ABC583 /* ActiveSessionViewModel.swift in Sources */,
 				E47090D12D23036C005C3F43 /* LocationManagerProtocol.swift in Sources */,
+				E42352FE2D26C99F003E28D8 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 enum Colors {
-    static let primary = Color("PrimaryColor")
-    static let secondary = Color("SecondaryColor")
+    static let primary = Color("PrimaryAppColor")
+    static let secondary = Color("SecondaryAppColor")
     static let background = Color("BackgroundColor")
     static let backgroundMedium = Color("BackgroundMediumColor")
     static let text = Color("TextColor")
@@ -24,6 +24,7 @@ enum CornerRadius {
 
 enum Fonts {
     static let heading = Font.system(size: 24, weight: .bold)
+    static let subheading = Font.system(size: 20, weight: .bold)
     static let body = Font.system(size: 16, weight: .regular)
     static let caption = Font.system(size: 12, weight: .light)
 

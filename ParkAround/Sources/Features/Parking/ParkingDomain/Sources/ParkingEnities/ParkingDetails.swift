@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 
 struct ParkingDetails: Hashable, Identifiable {
 
@@ -15,6 +16,10 @@ struct ParkingDetails: Hashable, Identifiable {
     let address: GeoLocation
     let availableSpots: Int
     let totalSpots: Int
+
+    var coordinate : CLLocationCoordinate2D {
+        CLLocationCoordinate2D(latitude: address.latitude, longitude: address.longitude)
+    }
 
     init(id: Int, name: String, rate: Double, address: GeoLocation, availableSpots: Int, totalSpots: Int) {
         self.id = id

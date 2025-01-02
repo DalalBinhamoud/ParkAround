@@ -22,7 +22,7 @@ class AppCoordinator: ObservableObject {
     // MARK: - Methods
     func onAppear() {
         // user is not allowed to explore nearby parking spots if the location is not enabled
-        if !applicationService.locationManager.isLocationEnabled {
+        if applicationService.locationManager.isLocationEnabled {
             currentView = .locationDisabled
         }
     }

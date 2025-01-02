@@ -20,14 +20,31 @@ struct WelcomeView<ViewModel> : View where ViewModel: WelcomeViewModelProtocol {
 
     // MARK: - Body
     var body: some View {
-        VStack {
-            Text("Welcome")
-            Button(action: {
-                viewModel.onContinue()
-            }, label: {
-                Text("On Continue")
-            })
+        ZStack {
 
+            Colors.backgroundMedium
+                .ignoresSafeArea()
+
+            VStack(spacing: Spacing.large) {
+                Spacer()
+
+                Image("logo", bundle: .main)
+                    .resizable()
+                    .scaledToFit()
+                    .padding(Spacing.medium)
+
+                Text("Find nearby paid parking and details you need at your fingertips!")
+                    .foregroundStyle(Colors.text)
+                    .font(Fonts.heading)
+                    .lineSpacing(Spacing.small)
+
+                Spacer()
+
+                PrimaryButton(label: "Let's Start", action: {
+                    viewModel.onContinue()
+                })
+            }
+            .padding(Spacing.large)
         }
     }
 }
