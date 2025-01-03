@@ -11,12 +11,10 @@ struct AppCoordinatorView: View {
     // MARK: - Properties
     @ObservedObject private var appCoordinator = AppCoordinator()
 
+
     // MARK: - Body
     var body: some View {
         rootView
-            .onAppear {
-                appCoordinator.onAppear()
-            }
     }
 }
 

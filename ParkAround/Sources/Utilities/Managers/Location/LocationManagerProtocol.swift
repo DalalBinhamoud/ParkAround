@@ -10,7 +10,6 @@ import Foundation
 
 protocol LocationManagerProtocol: AnyObject {
     var isLocationEnabled: Bool { get }
-    var authorizationStatus: CLAuthorizationStatus { get }
     var lastLocation: GeoLocation? { get }
 
     func requestWhenInUseAuthorization() async -> CLAuthorizationStatus

@@ -8,40 +8,41 @@
 import CoreLocation
 import Foundation
 
-class LocationManager: NSObject, LocationManagerProtocol {
+class LocationManager: NSObject, ObservableObject, LocationManagerProtocol {
 
     // MARK: - Properties
-    @Published private(set) var authorizationStatus = CLAuthorizationStatus.notDetermined
     @Published private(set) var lastLocation: GeoLocation?
+    @Published private(set) var isLocationEnabled = false
+    var manager = CLLocationManager()
 
-
-    var isLocationEnabled: Bool {
-        authorizationStatus == .authorizedAlways || authorizationStatus == .authorizedWhenInUse
+    override init() {
+        super.init()
+        checkLocationAuthorization()
     }
 
-//    @MainActor
-//    override init() {
-//        super.init()
-//        manager.requestWhenInUseAuthorization()
-//    }
+    func checkLocationAuthorization() {
 
-    private var authorizationContinuation: CheckedContinuation<CLAuthorizationStatus, Never>?
-
-    @MainActor private lazy var manager: CLLocationManager = {
-        let manager = CLLocationManager()
         manager.delegate = self
-        return manager
-    }()
+        manager.startUpdatingLocation()
+
+        switch manager.authorizationStatus {
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+        case .authorizedAlways, .authorizedWhenInUse:
+            lastLocation = GeoLocation(latitude: manager.location?.coordinate.latitude ?? 0, longitude: manager.location?.coordinate.longitude ?? 0)
+            isLocationEnabled = true
+        case .denied, .restricted:
+            isLocationEnabled = false
+        @unknown default:
+            isLocationEnabled = false
+        }
+    }
 
     @MainActor
     func requestWhenInUseAuthorization() async -> CLAuthorizationStatus {
         guard manager.authorizationStatus == .notDetermined else { return manager.authorizationStatus }
-
-        return await withCheckedContinuation { [weak self] continuation in
-            self?.authorizationContinuation = continuation
-            self?.manager.requestWhenInUseAuthorization()
-
-        }
+        self.manager.requestWhenInUseAuthorization()
+        return manager.authorizationStatus
     }
 
 }
@@ -50,11 +51,7 @@ class LocationManager: NSObject, LocationManagerProtocol {
 extension LocationManager: CLLocationManagerDelegate {
 
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        authorizationStatus = manager.authorizationStatus
-        authorizationContinuation?.resume(returning: manager.authorizationStatus)
-        authorizationContinuation = nil
-        guard [.authorizedWhenInUse, .authorizedAlways].contains(authorizationStatus) else { return }
-        manager.startUpdatingLocation()
+        checkLocationAuthorization()
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

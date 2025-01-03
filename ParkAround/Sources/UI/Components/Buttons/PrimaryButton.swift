@@ -20,7 +20,7 @@ struct PrimaryButton: View {
                 .padding(Spacing.medium)
         })
         .frame(maxWidth: .infinity)
-        .background(.blue)
+        .background(Colors.primary)
         .cornerRadius(CornerRadius.medium)
     }
 }

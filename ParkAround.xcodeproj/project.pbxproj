@@ -12,6 +12,7 @@
 		E42353042D26CA72003E28D8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42353032D26CA72003E28D8 /* MainView.swift */; };
 		E42353062D27BE4F003E28D8 /* ParkingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42353052D27BE4F003E28D8 /* ParkingDetailsView.swift */; };
 		E423530A2D27CC97003E28D8 /* ParkingSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42353092D27CC97003E28D8 /* ParkingSearchView.swift */; };
+		E423530D2D282579003E28D8 /* URLOpener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E423530C2D282579003E28D8 /* URLOpener.swift */; };
 		E47090772D22FF48005C3F43 /* ParkAroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090762D22FF48005C3F43 /* ParkAroundApp.swift */; };
 		E470907B2D22FF4A005C3F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E470907A2D22FF4A005C3F43 /* Assets.xcassets */; };
 		E470907E2D22FF4A005C3F43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E470907D2D22FF4A005C3F43 /* Preview Assets.xcassets */; };
@@ -109,6 +110,7 @@
 		E42353032D26CA72003E28D8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E42353052D27BE4F003E28D8 /* ParkingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParkingDetailsView.swift; path = ParkAround/Sources/Main/Presentation/Main/ParkingDetailsView.swift; sourceTree = SOURCE_ROOT; };
 		E42353092D27CC97003E28D8 /* ParkingSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingSearchView.swift; sourceTree = "<group>"; };
+		E423530C2D282579003E28D8 /* URLOpener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLOpener.swift; sourceTree = "<group>"; };
 		E47090732D22FF48005C3F43 /* ParkAround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkAround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E47090762D22FF48005C3F43 /* ParkAroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkAroundApp.swift; sourceTree = "<group>"; };
 		E470907A2D22FF4A005C3F43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -243,6 +245,14 @@
 			path = SubViews;
 			sourceTree = "<group>";
 		};
+		E423530B2D28256B003E28D8 /* URLOpener */ = {
+			isa = PBXGroup;
+			children = (
+				E423530C2D282579003E28D8 /* URLOpener.swift */,
+			);
+			path = URLOpener;
+			sourceTree = "<group>";
+		};
 		E470906A2D22FF48005C3F43 = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +368,7 @@
 		E47090A52D22FFD4005C3F43 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				E423530B2D28256B003E28D8 /* URLOpener */,
 				E4F0D2142D25774B00017BAA /* JSONLoader */,
 				E47090A62D22FFE8005C3F43 /* Managers */,
 				E47090A82D230039005C3F43 /* AlertWrapper */,
@@ -1093,6 +1104,7 @@
 				E4E2CDDE2D253FD500ABC583 /* ParkingSpotsMapViewModel.swift in Sources */,
 				E4E2CDE52D2554A700ABC583 /* ActiveSessionViewModel.swift in Sources */,
 				E47090D12D23036C005C3F43 /* LocationManagerProtocol.swift in Sources */,
+				E423530D2D282579003E28D8 /* URLOpener.swift in Sources */,
 				E42352FE2D26C99F003E28D8 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

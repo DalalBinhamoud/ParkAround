@@ -8,11 +8,21 @@
 import SwiftUI
 
 struct MainView: View {
+
+    // MARK: - Properties
     @State var isActive = false
+    @StateObject var locationManager = LocationManager()
+
+    // MARK: - Body
     var body: some View {
         ZStack {
             if isActive {
-                AppCoordinatorView()
+                if locationManager.isLocationEnabled {
+                    AppCoordinatorView()
+                } else {
+                    LocationDisabledView()
+                }
+
             } else {
                 SplashView()
             }
@@ -23,6 +33,7 @@ struct MainView: View {
                 withAnimation {
                     isActive = true
                 }
+                locationManager.checkLocationAuthorization()
             }
         }
     }
