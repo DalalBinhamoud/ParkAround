@@ -10,6 +10,21 @@ import SwiftUI
 struct MainView: View {
     @State var isActive = false
     var body: some View {
-        AppCoordinatorView()
+        ZStack {
+            if isActive {
+                AppCoordinatorView()
+            } else {
+                SplashView()
+            }
+        }
+        .onAppear {
+            Task {
+                try await Task.sleep(for: .seconds(3))
+                withAnimation {
+                    isActive = true
+                }
+            }
+        }
     }
+
 }

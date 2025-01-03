@@ -10,6 +10,8 @@
 		E42352FE2D26C99F003E28D8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42352FD2D26C99F003E28D8 /* SplashView.swift */; };
 		E42353022D26C9FD003E28D8 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42353012D26C9FD003E28D8 /* PrimaryButton.swift */; };
 		E42353042D26CA72003E28D8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42353032D26CA72003E28D8 /* MainView.swift */; };
+		E42353062D27BE4F003E28D8 /* ParkingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42353052D27BE4F003E28D8 /* ParkingDetailsView.swift */; };
+		E423530A2D27CC97003E28D8 /* ParkingSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42353092D27CC97003E28D8 /* ParkingSearchView.swift */; };
 		E47090772D22FF48005C3F43 /* ParkAroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090762D22FF48005C3F43 /* ParkAroundApp.swift */; };
 		E470907B2D22FF4A005C3F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E470907A2D22FF4A005C3F43 /* Assets.xcassets */; };
 		E470907E2D22FF4A005C3F43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E470907D2D22FF4A005C3F43 /* Preview Assets.xcassets */; };
@@ -105,6 +107,8 @@
 		E42352FD2D26C99F003E28D8 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		E42353012D26C9FD003E28D8 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		E42353032D26CA72003E28D8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E42353052D27BE4F003E28D8 /* ParkingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ParkingDetailsView.swift; path = ParkAround/Sources/Main/Presentation/Main/ParkingDetailsView.swift; sourceTree = SOURCE_ROOT; };
+		E42353092D27CC97003E28D8 /* ParkingSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingSearchView.swift; sourceTree = "<group>"; };
 		E47090732D22FF48005C3F43 /* ParkAround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkAround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E47090762D22FF48005C3F43 /* ParkAroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkAroundApp.swift; sourceTree = "<group>"; };
 		E470907A2D22FF4A005C3F43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -229,6 +233,14 @@
 				E42353012D26C9FD003E28D8 /* PrimaryButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		E42353072D27CC73003E28D8 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				E42353092D27CC97003E28D8 /* ParkingSearchView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		E470906A2D22FF48005C3F43 = {
@@ -774,6 +786,7 @@
 		E47091492D23CE1D005C3F43 /* ParkingDetails */ = {
 			isa = PBXGroup;
 			children = (
+				E42353052D27BE4F003E28D8 /* ParkingDetailsView.swift */,
 			);
 			path = ParkingDetails;
 			sourceTree = "<group>";
@@ -842,6 +855,7 @@
 		E4E2CDDC2D253F0400ABC583 /* ParkingSpotsMap */ = {
 			isa = PBXGroup;
 			children = (
+				E42353072D27CC73003E28D8 /* SubViews */,
 				E4E2CDD82D253C4900ABC583 /* ParkingSpotsMapView.swift */,
 				E4E2CDDD2D253FD500ABC583 /* ParkingSpotsMapViewModel.swift */,
 				E4E2CDDF2D253FDD00ABC583 /* ParkingSpotsMapViewModelProtocol.swift */,
@@ -1039,6 +1053,7 @@
 				E4F0D2162D25775C00017BAA /* JSONLoader.swift in Sources */,
 				E47091412D23CCDF005C3F43 /* ParkingStatus.swift in Sources */,
 				E4F0D2182D2579B400017BAA /* MockedNetworkClient.swift in Sources */,
+				E423530A2D27CC97003E28D8 /* ParkingSearchView.swift in Sources */,
 				E47091102D23AAE5005C3F43 /* ParkingService.swift in Sources */,
 				E4E2CDD02D252ED900ABC583 /* WelcomeView.swift in Sources */,
 				E470911E2D23AEBD005C3F43 /* ParkingDetailsMapper.swift in Sources */,
@@ -1047,6 +1062,7 @@
 				E47090D82D2303BB005C3F43 /* NetworkError.swift in Sources */,
 				E47090E52D2313AD005C3F43 /* DesignTokens.swift in Sources */,
 				E47090DA2D2303CB005C3F43 /* NetworkClient.swift in Sources */,
+				E42353062D27BE4F003E28D8 /* ParkingDetailsView.swift in Sources */,
 				E4E2CDC92D2520F300ABC583 /* Routes.swift in Sources */,
 				E4E2CDD72D25346C00ABC583 /* LocationDisabledView.swift in Sources */,
 				E47091222D23B01C005C3F43 /* ParkingRepositorySpy.swift in Sources */,
@@ -1249,6 +1265,7 @@
 				DEVELOPMENT_TEAM = 558X4RCVR9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1278,6 +1295,7 @@
 				DEVELOPMENT_TEAM = 558X4RCVR9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -12,7 +12,6 @@ enum Route {
     case welcome
     case home(homeRoute: HomeRoute)
     case locationDisabled
-
 }
 
 enum HomeRoute: Hashable {

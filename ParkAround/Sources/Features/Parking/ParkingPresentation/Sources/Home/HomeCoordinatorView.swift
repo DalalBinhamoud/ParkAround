@@ -20,7 +20,6 @@ struct HomeCoordinatorView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                Text("Home Coordinator")
                 ParkingSpotsMapView(
                     viewModel: ParkingSpotsMapViewModel(
                         applicationService: homeCoordinator.applicationService,

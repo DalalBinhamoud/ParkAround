@@ -10,6 +10,11 @@ struct GeoLocation: Codable, Hashable {
     let latitude: Double
     let longitude: Double
 
+    // for searching purpose
+    var description: String {
+        "\(latitude), \(longitude)"
+    }
+
     // MARK: - Init
     init(latitude: Double, longitude: Double) {
         self.latitude = latitude

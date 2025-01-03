@@ -10,5 +10,5 @@ import Foundation
 final class ApplicationServiceMock {
 
     var networkClient = NetworkClientMock()
-    var locationMAnager = LocationManager()
+//    var locationMAnager = LocationManager()
 }

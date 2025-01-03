@@ -7,13 +7,17 @@
 
 import Foundation
 
+@MainActor
 class AppCoordinator: ObservableObject {
 
     // MARK: - Properties
     @Published var currentView: Route = .welcome
-    @Published private(set) var applicationService = AppComponent.applicationService
-    @Published private(set) var apiService = AppComponent.apiService
-    @Published private(set) var parkingService: ParkingServiceProtocol
+    private var cancellable: Set<AnyCancellable> = []
+
+    private(set) var applicationService = AppComponent.applicationService
+    private(set) var apiService = AppComponent.apiService
+    private(set) var parkingService: ParkingServiceProtocol
+
 
     init() {
         self.parkingService = ParkingService(serviceProvider: AppComponent.apiService)
@@ -21,8 +25,8 @@ class AppCoordinator: ObservableObject {
 
     // MARK: - Methods
     func onAppear() {
-        // user is not allowed to explore nearby parking spots if the location is not enabled
-        if applicationService.locationManager.isLocationEnabled {
+//        // user is not allowed to explore nearby parking spots if the location is not enabled
+        if !applicationService.locationManager.isLocationEnabled {
             currentView = .locationDisabled
         }
     }

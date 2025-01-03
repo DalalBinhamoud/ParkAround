@@ -19,7 +19,11 @@ class LocationManager: NSObject, LocationManagerProtocol {
         authorizationStatus == .authorizedAlways || authorizationStatus == .authorizedWhenInUse
     }
 
-
+//    @MainActor
+//    override init() {
+//        super.init()
+//        manager.requestWhenInUseAuthorization()
+//    }
 
     private var authorizationContinuation: CheckedContinuation<CLAuthorizationStatus, Never>?
 

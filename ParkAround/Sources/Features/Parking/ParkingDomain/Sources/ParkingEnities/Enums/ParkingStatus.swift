@@ -7,7 +7,8 @@
 
 import Foundation
 
-enum ParkingStatus {
-    case available
-    case occupied
+enum ParkingStatus: String {
+    case available = "Available"
+    case busy = "Busy"
+    case veryBusy = "Very busy" // no available spot
 }

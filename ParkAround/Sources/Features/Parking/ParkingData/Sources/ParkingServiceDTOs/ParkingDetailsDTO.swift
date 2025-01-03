@@ -7,6 +7,7 @@
 
 import Foundation
 
+// suppose all attributes are required
 public struct ParkingDetailsDTO: Decodable, Equatable, Sendable {
 
     private enum CodingKeys: String, CodingKey {
