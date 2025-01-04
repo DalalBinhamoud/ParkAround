@@ -1,24 +1,26 @@
 //
-//  PrimaryButton.swift
+//  InlineButton.swift
 //  ParkAround
 //
-//  Created by Dalal Macbook on 02/01/2025.
+//  Created by Dalal Macbook on 04/01/2025.
 //
 
 import SwiftUI
 
-struct PrimaryButton: View {
+struct InlineButton: View {
 
     // MARK: - Properties
     private let label: String
+    private let background: Color
     private let action: () -> Void
 
     // MARK: - Init
     init(
         label: String,
-        action: @escaping () -> Void
-    ) {
+        background: Color = Colors.primary,
+        action: @escaping () -> Void) {
         self.label = label
+        self.background = background
         self.action = action
     }
 
@@ -32,15 +34,15 @@ struct PrimaryButton: View {
                 .font(Fonts.subheading)
                 .padding(Spacing.medium)
         })
-        .frame(maxWidth: .infinity)
-        .background(Colors.primary)
+        .background(background)
         .cornerRadius(CornerRadius.medium)
     }
 }
 
 #Preview {
-    PrimaryButton(label: "On Continue", action: {
+    InlineButton(
+        label: "Press",
+        action: {
         /* Preview */
     })
-    .padding(Spacing.medium)
 }

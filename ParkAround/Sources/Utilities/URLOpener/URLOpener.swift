@@ -9,12 +9,19 @@ import Foundation
 import UIKit
 
 protocol URLOpener {
-    func open(_ url: URL, options: [UIApplication.OpenExternalURLOptionsKey: Any]) // completionHandler: ((Bool) -> Void)?
+    func canOpen(_ url: URL) -> Bool
+    func open(_ url: URL, options: [UIApplication.OpenExternalURLOptionsKey: Any], completion: ((Bool) -> Void)?)
 }
 
+extension URLOpener {
+    
+    func canOpen(_ url: URL) -> Bool {
+        return UIApplication.shared.canOpenURL(url)
+    }
 
-extension UIApplication: URLOpener {
-    func open(_ url: URL, options: [OpenExternalURLOptionsKey : Any]) { //completionHandler: ((Bool) -> Void)? = nil
-        open(url, options: options)
+    func open(_ url: URL, options: [UIApplication.OpenExternalURLOptionsKey : Any], completion: ((Bool) -> Void)? = nil) {
+        UIApplication.shared.open(url, options: options, completionHandler: completion)
     }
 }
+
+extension UIApplication: URLOpener { }

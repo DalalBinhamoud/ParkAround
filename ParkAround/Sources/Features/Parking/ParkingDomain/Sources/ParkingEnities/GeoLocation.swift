@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct GeoLocation: Codable, Hashable {
     let latitude: Double
     let longitude: Double

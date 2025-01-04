@@ -9,5 +9,4 @@ import Foundation
 
 protocol ParkingRepositoryProtocol {
     func fetchParkingSpots(userLocation: GeoLocation) async throws -> [ParkingDetails]
-    func processPayment(amount: Double) async throws -> Bool
 }

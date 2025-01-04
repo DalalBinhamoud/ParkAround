@@ -10,6 +10,7 @@ import Foundation
 protocol ParkingSpotsMapViewModelProtocol: ObservableObject {
     var isLoading: Bool { get }
     var parkingSpots: [ParkingDetails] { get }
+    var paymentRepository: PaymentRepositoryProtocol { get }
 
     func onAppear() async
 

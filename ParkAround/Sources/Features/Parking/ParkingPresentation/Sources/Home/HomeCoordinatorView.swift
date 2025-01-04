@@ -23,7 +23,8 @@ struct HomeCoordinatorView: View {
                 ParkingSpotsMapView(
                     viewModel: ParkingSpotsMapViewModel(
                         applicationService: homeCoordinator.applicationService,
-                        repository: homeCoordinator.parkingRepository
+                        parkingRepository: homeCoordinator.parkingRepository,
+                        paymentRepository: homeCoordinator.paymentRepository
                     )
                 )
             }

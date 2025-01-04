@@ -52,7 +52,9 @@ extension LocationDisabledView {
     private var openSettings: some View {
         PrimaryButton(label: "Settings", action: {
             if let url = URL(string: UIApplication.openSettingsURLString) {
-                urlOpener.open(url, options: [:])
+                if urlOpener.canOpen(url) {
+                    urlOpener.open(url, options: [:])
+                }
             }
         })
     }

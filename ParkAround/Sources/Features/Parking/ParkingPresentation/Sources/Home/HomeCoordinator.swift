@@ -12,6 +12,7 @@ class HomeCoordinator: ObservableObject {
     @Published private(set) var currentView: HomeRoute
     @Published private(set) var applicationService: ApplicationService
     @Published private(set) var parkingRepository: ParkingRepositoryProtocol
+    @Published private(set) var paymentRepository: PaymentRepository
     private(set) var parkingService: ParkingServiceProtocol?
 
     // MARK: - Init
@@ -22,6 +23,7 @@ class HomeCoordinator: ObservableObject {
         self.currentView = currentView
         self.applicationService = applicationService
         self.parkingRepository = ParkingRepository(parkingService: parkingService)
+        self.paymentRepository = PaymentRepository()
     }
 
     // MARK: - Methods

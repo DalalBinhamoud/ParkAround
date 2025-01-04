@@ -19,17 +19,4 @@ final class ParkingRepository: ParkingRepositoryProtocol {
         let response = try await parkingService.getNearbyParkingSpots(userLocation: userLocation)
         return ParkingDetailsMapper.map(from: response)
     }
-
-    // Mock Payment proccess
-    func processPayment(amount: Double) async throws -> Bool {
-
-        // Simulate a delay
-        try await Task.sleep(for: .seconds(Constants.mockedPaymentDuration))
-
-        return true
-    }
-}
-
-private enum  Constants {
-    static let mockedPaymentDuration = 1_0000
 }
