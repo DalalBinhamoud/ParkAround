@@ -10,6 +10,7 @@ import SwiftUI
 struct AppCoordinatorView: View {
     // MARK: - Properties
     @ObservedObject private var appCoordinator = AppCoordinator()
+    @Environment(\.modelContext) var context
 
 
     // MARK: - Body
@@ -30,7 +31,8 @@ extension AppCoordinatorView {
                 homeCoordinator: HomeCoordinator(
                     currentView: homeRoute,
                     applicationService: appCoordinator.applicationService,
-                    parkingService: appCoordinator.parkingService
+                    parkingService: appCoordinator.parkingService,
+                    context: context
                 ))
         case .locationDisabled:
             LocationDisabledView()

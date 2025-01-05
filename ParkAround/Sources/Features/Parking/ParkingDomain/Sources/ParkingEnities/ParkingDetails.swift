@@ -13,6 +13,7 @@ struct ParkingDetails: Hashable, Identifiable {
     let id: Int
     let name: String
     let rate: Double
+    let costPerHour: Double
     let address: GeoLocation
     let availableSpots: Int
     let totalSpots: Int
@@ -41,10 +42,11 @@ struct ParkingDetails: Hashable, Identifiable {
         }
     }
 
-    init(id: Int, name: String, rate: Double, address: GeoLocation, availableSpots: Int, totalSpots: Int) {
+    init(id: Int, name: String, rate: Double, costPerHour: Double, address: GeoLocation, availableSpots: Int, totalSpots: Int) {
         self.id = id
         self.name = name
         self.rate = rate
+        self.costPerHour = costPerHour
         self.address = address
         self.availableSpots = availableSpots
         self.totalSpots = totalSpots

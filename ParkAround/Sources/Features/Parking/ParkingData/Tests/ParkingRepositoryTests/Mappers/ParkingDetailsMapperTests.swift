@@ -21,6 +21,7 @@ final class ParkingDetailsMapperTests: XCTestCase {
         XCTAssertEqual(parkingDetails.id, dto.id)
         XCTAssertEqual(parkingDetails.name, dto.name)
         XCTAssertEqual(parkingDetails.rate, dto.rate)
+        XCTAssertEqual(parkingDetails.costPerHour, dto.costPerHour)
         XCTAssertEqual(parkingDetails.address.latitude, dto.latitude)
         XCTAssertEqual(parkingDetails.address.longitude, dto.longitude)
         XCTAssertEqual(parkingDetails.availableSpots, dto.availableSpots)

@@ -13,6 +13,7 @@ class ParkingDetailsMapper {
             id: dto.id,
             name: dto.name,
             rate: dto.rate,
+            costPerHour: dto.costPerHour,
             address: GeoLocation(latitude: dto.latitude, longitude: dto.longitude),
             availableSpots: dto.availableSpots,
             totalSpots: dto.totalSpots

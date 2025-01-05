@@ -93,7 +93,7 @@ extension ParkingDetailsView {
 #Preview {
     class ViewModelFixture: ParkingDetailsViewModelProtocol {
         var selectedTime = 1
-        var totalPrice = 10
+        var totalPrice = 10.0
         var isLoading = false
         var parkingDetails = ParkingDetails.StubFactory.make()
         func processPayment() async { }

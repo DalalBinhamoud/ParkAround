@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol TimerManagerProtocol {
+protocol TimerManagerProtocol: ObservableObject {
     var sessionStartTime: Date? { get }
     var sessionDuration: TimeInterval? { get }
 

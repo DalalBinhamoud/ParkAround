@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeCoordinatorView: View {
     // MARK: - Properties
     @ObservedObject private var homeCoordinator: HomeCoordinator
+    @State var navigationPath = NavigationPath()
+    @Environment(\.modelContext) private var modelContext
 
     // MARK: - Init
     init(homeCoordinator: HomeCoordinator) {
@@ -18,33 +20,48 @@ struct HomeCoordinatorView: View {
 
     // MARK: - Body
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigationPath) {
             VStack {
+                HStack {
+                    Text("Header")
+                    Button(action: {
+                        homeCoordinator.currentView = .history
+                        navigationPath.append(HomeRoute.history)
+                    }, label: {
+                        Text("Go to history")
+                    })
+                }
+
                 ParkingSpotsMapView(
                     viewModel: ParkingSpotsMapViewModel(
                         applicationService: homeCoordinator.applicationService,
                         parkingRepository: homeCoordinator.parkingRepository,
-                        paymentRepository: homeCoordinator.paymentRepository
+                        paymentRepository: homeCoordinator.paymentRepository,
+                        modelContext: modelContext
                     )
                 )
             }
-        }
-        .navigationDestination(for: HomeRoute.self) { route in
-            switch route {
-            case .parkings:
-                Text("parkings")
-            case .parkingDetails(let info):
-                Text("\(info.name)")
-            case .history:
-                Text("history")
-            case .favorites:
-                Text("favorites")
-            }
+            .navigationDestination(for: HomeRoute.self) { route in
+                switch route {
+                case .parkings:
+                    Text("parkings")
+                case .parkingDetails(let info):
+                    Text("\(info.name)")
+                case .history:
+                    ReservationsHistoryView(
+                        viewModel:
+                            ReservationsHistoryViewModel(parkingRepository: homeCoordinator.parkingRepository)
+                    )
+                case .favorites:
+                    Text("favorites")
+                }
 
+            }
         }
     }
 }
 
+// TODO: Add Fixture
 //#Preview {
 //    HomeCoordinatorView()
 //}

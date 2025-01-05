@@ -25,4 +25,11 @@ final class ParkingRepositorySpy: ParkingRepositoryProtocol {
         processPaymentCallsCount += 1
         return try await processPaymentTasks.value
     }
+
+    var fetchReservationsHistoryTasks = Task<[ParkingReservation], Error> { throw ErrorStub() }
+    var fetchReservationsHistoryCallsCount = 0
+    func fetchReservationsHistory() async throws -> [ParkingReservation] {
+        fetchReservationsHistoryCallsCount += 1
+        return try await fetchReservationsHistoryTasks.value
+    }
 }

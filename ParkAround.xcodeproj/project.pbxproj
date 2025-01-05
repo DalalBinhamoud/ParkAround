@@ -69,6 +69,13 @@
 		E4C4CC612D29807D004EA2FF /* ParkingDetailsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC602D29807D004EA2FF /* ParkingDetailsViewModelProtocol.swift */; };
 		E4C4CC632D298356004EA2FF /* PaymentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC622D298356004EA2FF /* PaymentRepository.swift */; };
 		E4C4CC652D298363004EA2FF /* PaymentRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC642D298363004EA2FF /* PaymentRepositoryProtocol.swift */; };
+		E4C4CC6D2D299EA9004EA2FF /* ActiveSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC6C2D299EA9004EA2FF /* ActiveSessionManager.swift */; };
+		E4C4CC6F2D299F09004EA2FF /* ActiveSessionManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC6E2D299F09004EA2FF /* ActiveSessionManagerProtocol.swift */; };
+		E4C4CC722D29A3A3004EA2FF /* ParkingReservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC712D29A3A3004EA2FF /* ParkingReservation.swift */; };
+		E4C4CC752D29A4DE004EA2FF /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC742D29A4DE004EA2FF /* PersistenceController.swift */; };
+		E4C4CC772D29A78E004EA2FF /* ReservationsHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC762D29A78E004EA2FF /* ReservationsHistoryViewModel.swift */; };
+		E4C4CC792D29A799004EA2FF /* ReservationsHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC782D29A799004EA2FF /* ReservationsHistoryView.swift */; };
+		E4C4CC7B2D29A7B2004EA2FF /* ReservationsHistoryViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC7A2D29A7B2004EA2FF /* ReservationsHistoryViewModelProtocol.swift */; };
 		E4E2CDC92D2520F300ABC583 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E2CDC82D2520F200ABC583 /* Routes.swift */; };
 		E4E2CDCB2D25275900ABC583 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E2CDCA2D25275900ABC583 /* HomeCoordinator.swift */; };
 		E4E2CDCD2D25276100ABC583 /* HomeCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E2CDCC2D25276100ABC583 /* HomeCoordinatorView.swift */; };
@@ -80,7 +87,6 @@
 		E4E2CDDE2D253FD500ABC583 /* ParkingSpotsMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E2CDDD2D253FD500ABC583 /* ParkingSpotsMapViewModel.swift */; };
 		E4E2CDE02D253FDD00ABC583 /* ParkingSpotsMapViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E2CDDF2D253FDD00ABC583 /* ParkingSpotsMapViewModelProtocol.swift */; };
 		E4E2CDE22D2549EA00ABC583 /* NearbyParkingSpotsRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E2CDE12D2549EA00ABC583 /* NearbyParkingSpotsRequestTests.swift */; };
-		E4E2CDE52D2554A700ABC583 /* ActiveSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E2CDE42D2554A700ABC583 /* ActiveSessionViewModel.swift */; };
 		E4E2CDE82D2559B300ABC583 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E2CDE72D2559B300ABC583 /* TimerManager.swift */; };
 		E4E2CDEA2D2559BD00ABC583 /* TimerManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E2CDE92D2559BD00ABC583 /* TimerManagerProtocol.swift */; };
 		E4E2CDED2D2559D100ABC583 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E2CDEC2D2559D100ABC583 /* NotificationManager.swift */; };
@@ -177,6 +183,13 @@
 		E4C4CC602D29807D004EA2FF /* ParkingDetailsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsViewModelProtocol.swift; sourceTree = "<group>"; };
 		E4C4CC622D298356004EA2FF /* PaymentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRepository.swift; sourceTree = "<group>"; };
 		E4C4CC642D298363004EA2FF /* PaymentRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRepositoryProtocol.swift; sourceTree = "<group>"; };
+		E4C4CC6C2D299EA9004EA2FF /* ActiveSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSessionManager.swift; sourceTree = "<group>"; };
+		E4C4CC6E2D299F09004EA2FF /* ActiveSessionManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSessionManagerProtocol.swift; sourceTree = "<group>"; };
+		E4C4CC712D29A3A3004EA2FF /* ParkingReservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingReservation.swift; sourceTree = "<group>"; };
+		E4C4CC742D29A4DE004EA2FF /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		E4C4CC762D29A78E004EA2FF /* ReservationsHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReservationsHistoryViewModel.swift; path = ParkAround/Sources/Main/ReservationsHistoryViewModel.swift; sourceTree = SOURCE_ROOT; };
+		E4C4CC782D29A799004EA2FF /* ReservationsHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReservationsHistoryView.swift; path = ParkAround/Sources/Main/ReservationsHistoryView.swift; sourceTree = SOURCE_ROOT; };
+		E4C4CC7A2D29A7B2004EA2FF /* ReservationsHistoryViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReservationsHistoryViewModelProtocol.swift; path = ParkAround/Sources/Main/ReservationsHistoryViewModelProtocol.swift; sourceTree = SOURCE_ROOT; };
 		E4E2CDC82D2520F200ABC583 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		E4E2CDCA2D25275900ABC583 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		E4E2CDCC2D25276100ABC583 /* HomeCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorView.swift; sourceTree = "<group>"; };
@@ -188,7 +201,6 @@
 		E4E2CDDD2D253FD500ABC583 /* ParkingSpotsMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingSpotsMapViewModel.swift; sourceTree = "<group>"; };
 		E4E2CDDF2D253FDD00ABC583 /* ParkingSpotsMapViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingSpotsMapViewModelProtocol.swift; sourceTree = "<group>"; };
 		E4E2CDE12D2549EA00ABC583 /* NearbyParkingSpotsRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyParkingSpotsRequestTests.swift; sourceTree = "<group>"; };
-		E4E2CDE42D2554A700ABC583 /* ActiveSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSessionViewModel.swift; sourceTree = "<group>"; };
 		E4E2CDE72D2559B300ABC583 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		E4E2CDE92D2559BD00ABC583 /* TimerManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManagerProtocol.swift; sourceTree = "<group>"; };
 		E4E2CDEC2D2559D100ABC583 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
@@ -386,6 +398,7 @@
 		E47090A62D22FFE8005C3F43 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				E4C4CC6B2D299E97004EA2FF /* ActiveSessionManager */,
 				E47090C82D230324005C3F43 /* Location */,
 				E4E2CDEB2D2559C000ABC583 /* Notification */,
 				E4E2CDE62D2559A000ABC583 /* Timer */,
@@ -447,11 +460,14 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
-		E47090C12D230217005C3F43 /* History */ = {
+		E47090C12D230217005C3F43 /* ReservationsHistory */ = {
 			isa = PBXGroup;
 			children = (
+				E4C4CC762D29A78E004EA2FF /* ReservationsHistoryViewModel.swift */,
+				E4C4CC782D29A799004EA2FF /* ReservationsHistoryView.swift */,
+				E4C4CC7A2D29A7B2004EA2FF /* ReservationsHistoryViewModelProtocol.swift */,
 			);
-			path = History;
+			path = ReservationsHistory;
 			sourceTree = "<group>";
 		};
 		E47090C82D230324005C3F43 /* Location */ = {
@@ -691,6 +707,7 @@
 			isa = PBXGroup;
 			children = (
 				E470913F2D23CCD1005C3F43 /* Enums */,
+				E4C4CC702D29A385004EA2FF /* Reservation */,
 				E470911A2D23ADF3005C3F43 /* ParkingDetails.swift */,
 				E470914C2D23F609005C3F43 /* GeoLocation.swift */,
 			);
@@ -787,11 +804,9 @@
 		E47091452D23CDD3005C3F43 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				E4E2CDE32D2552D000ABC583 /* ActiveSession */,
 				E47090BB2D2301A5005C3F43 /* Home */,
-				E47090C12D230217005C3F43 /* History */,
+				E47090C12D230217005C3F43 /* ReservationsHistory */,
 				E47090C02D230208005C3F43 /* Favorites */,
-				E470914A2D23CE29005C3F43 /* Reservation */,
 				E47091492D23CE1D005C3F43 /* ParkingDetails */,
 				E47091472D23CE05005C3F43 /* ParkingCoordinator.swift */,
 			);
@@ -816,16 +831,10 @@
 			path = ParkingDetails;
 			sourceTree = "<group>";
 		};
-		E470914A2D23CE29005C3F43 /* Reservation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Reservation;
-			sourceTree = "<group>";
-		};
 		E47091502D23FA38005C3F43 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E4C4CC732D29A4CF004EA2FF /* Persistence */,
 				E47090A32D22FF9E005C3F43 /* Presentation */,
 				E47090A42D22FFC0005C3F43 /* Services */,
 				E47090A22D22FF8C005C3F43 /* Networking */,
@@ -848,6 +857,31 @@
 				E4C4CC5A2D2929F8004EA2FF /* TimeSlotsView.swift */,
 			);
 			path = TimeSlots;
+			sourceTree = "<group>";
+		};
+		E4C4CC6B2D299E97004EA2FF /* ActiveSessionManager */ = {
+			isa = PBXGroup;
+			children = (
+				E4C4CC6C2D299EA9004EA2FF /* ActiveSessionManager.swift */,
+				E4C4CC6E2D299F09004EA2FF /* ActiveSessionManagerProtocol.swift */,
+			);
+			path = ActiveSessionManager;
+			sourceTree = "<group>";
+		};
+		E4C4CC702D29A385004EA2FF /* Reservation */ = {
+			isa = PBXGroup;
+			children = (
+				E4C4CC712D29A3A3004EA2FF /* ParkingReservation.swift */,
+			);
+			path = Reservation;
+			sourceTree = "<group>";
+		};
+		E4C4CC732D29A4CF004EA2FF /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				E4C4CC742D29A4DE004EA2FF /* PersistenceController.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 		E4E2CDC72D2520DA00ABC583 /* Routes */ = {
@@ -902,14 +936,6 @@
 				E4E2CDDF2D253FDD00ABC583 /* ParkingSpotsMapViewModelProtocol.swift */,
 			);
 			path = ParkingSpotsMap;
-			sourceTree = "<group>";
-		};
-		E4E2CDE32D2552D000ABC583 /* ActiveSession */ = {
-			isa = PBXGroup;
-			children = (
-				E4E2CDE42D2554A700ABC583 /* ActiveSessionViewModel.swift */,
-			);
-			path = ActiveSession;
 			sourceTree = "<group>";
 		};
 		E4E2CDE62D2559A000ABC583 /* Timer */ = {
@@ -1089,6 +1115,8 @@
 				E470910E2D23A7BB005C3F43 /* NearbyParkingSpotsRequest.swift in Sources */,
 				E4E2CDCB2D25275900ABC583 /* HomeCoordinator.swift in Sources */,
 				E42353022D26C9FD003E28D8 /* PrimaryButton.swift in Sources */,
+				E4C4CC752D29A4DE004EA2FF /* PersistenceController.swift in Sources */,
+				E4C4CC6F2D299F09004EA2FF /* ActiveSessionManagerProtocol.swift in Sources */,
 				E4C4CC652D298363004EA2FF /* PaymentRepositoryProtocol.swift in Sources */,
 				E47091482D23CE05005C3F43 /* ParkingCoordinator.swift in Sources */,
 				E47090F22D233779005C3F43 /* ApplicationServiceMock.swift in Sources */,
@@ -1117,8 +1145,11 @@
 				E47090AC2D2300CD005C3F43 /* AlertWrapperViewModel.swift in Sources */,
 				E4E2CDD42D252F8100ABC583 /* WelcomeViewModelProtocol.swift in Sources */,
 				E47090BA2D230192005C3F43 /* ErrorHandlingViewModel.swift in Sources */,
+				E4C4CC722D29A3A3004EA2FF /* ParkingReservation.swift in Sources */,
 				E470910A2D239F00005C3F43 /* APIServiceProtocol.swift in Sources */,
+				E4C4CC6D2D299EA9004EA2FF /* ActiveSessionManager.swift in Sources */,
 				E4E2CDED2D2559D100ABC583 /* NotificationManager.swift in Sources */,
+				E4C4CC772D29A78E004EA2FF /* ReservationsHistoryViewModel.swift in Sources */,
 				E47091182D23ACA6005C3F43 /* ParkingDetailsDTO.swift in Sources */,
 				E47090F02D232F4F005C3F43 /* LocationManagerMock.swift in Sources */,
 				E470913E2D23C888005C3F43 /* APIServiceSpy.swift in Sources */,
@@ -1137,11 +1168,12 @@
 				E470911B2D23ADF3005C3F43 /* ParkingDetails.swift in Sources */,
 				E47090DC2D2303D5005C3F43 /* NetworkClientProtocol.swift in Sources */,
 				E47090C72D2302DA005C3F43 /* AppCoordinatorView.swift in Sources */,
+				E4C4CC792D29A799004EA2FF /* ReservationsHistoryView.swift in Sources */,
 				E4E2CDDE2D253FD500ABC583 /* ParkingSpotsMapViewModel.swift in Sources */,
-				E4E2CDE52D2554A700ABC583 /* ActiveSessionViewModel.swift in Sources */,
 				E47090D12D23036C005C3F43 /* LocationManagerProtocol.swift in Sources */,
 				E4C4CC5D2D293D76004EA2FF /* InlineButton.swift in Sources */,
 				E423530D2D282579003E28D8 /* URLOpener.swift in Sources */,
+				E4C4CC7B2D29A7B2004EA2FF /* ReservationsHistoryViewModelProtocol.swift in Sources */,
 				E42352FE2D26C99F003E28D8 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
