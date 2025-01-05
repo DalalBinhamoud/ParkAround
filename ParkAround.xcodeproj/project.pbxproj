@@ -71,6 +71,7 @@
 		E4807A872D2AF4C300FA2CC2 /* ParkingSpotsMapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4807A862D2AF4C300FA2CC2 /* ParkingSpotsMapViewModelTests.swift */; };
 		E4807A892D2AF5C900FA2CC2 /* PaymentRepositorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4807A882D2AF5C900FA2CC2 /* PaymentRepositorySpy.swift */; };
 		E4807A8D2D2AFE2300FA2CC2 /* ParkingDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4807A8C2D2AFE2300FA2CC2 /* ParkingDetailsViewModelTests.swift */; };
+		E4807A8F2D2B1B1600FA2CC2 /* WelcomeViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4807A8E2D2B1B1600FA2CC2 /* WelcomeViewUITests.swift */; };
 		E4C4CC572D2918FB004EA2FF /* URLOpenerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC562D2918FB004EA2FF /* URLOpenerSpy.swift */; };
 		E4C4CC5B2D2929F8004EA2FF /* TimeSlotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC5A2D2929F8004EA2FF /* TimeSlotsView.swift */; };
 		E4C4CC5D2D293D76004EA2FF /* InlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC5C2D293D76004EA2FF /* InlineButton.swift */; };
@@ -199,6 +200,7 @@
 		E4807A862D2AF4C300FA2CC2 /* ParkingSpotsMapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingSpotsMapViewModelTests.swift; sourceTree = "<group>"; };
 		E4807A882D2AF5C900FA2CC2 /* PaymentRepositorySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRepositorySpy.swift; sourceTree = "<group>"; };
 		E4807A8C2D2AFE2300FA2CC2 /* ParkingDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsViewModelTests.swift; sourceTree = "<group>"; };
+		E4807A8E2D2B1B1600FA2CC2 /* WelcomeViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewUITests.swift; sourceTree = "<group>"; };
 		E4C4CC562D2918FB004EA2FF /* URLOpenerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = URLOpenerSpy.swift; path = ParkAround/Tests/TestDoubles/Spies/URLOpenerSpy.swift; sourceTree = SOURCE_ROOT; };
 		E4C4CC5A2D2929F8004EA2FF /* TimeSlotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotsView.swift; sourceTree = "<group>"; };
 		E4C4CC5C2D293D76004EA2FF /* InlineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineButton.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 			children = (
 				E47090912D22FF4A005C3F43 /* ParkAroundUITests.swift */,
 				E47090932D22FF4A005C3F43 /* ParkAroundUITestsLaunchTests.swift */,
+				E4807A8E2D2B1B1600FA2CC2 /* WelcomeViewUITests.swift */,
 			);
 			path = ParkAroundUITests;
 			sourceTree = "<group>";
@@ -1308,6 +1311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E47090922D22FF4A005C3F43 /* ParkAroundUITests.swift in Sources */,
+				E4807A8F2D2B1B1600FA2CC2 /* WelcomeViewUITests.swift in Sources */,
 				E47090942D22FF4A005C3F43 /* ParkAroundUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

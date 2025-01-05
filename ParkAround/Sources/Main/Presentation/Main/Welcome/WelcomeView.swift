@@ -29,21 +29,47 @@ struct WelcomeView<ViewModel> : View where ViewModel: WelcomeViewModelProtocol {
                     .resizable()
                     .scaledToFit()
                     .padding(Spacing.medium)
+                    .accessibilityIdentifier(ViewIdentifiers.Icon.logo)
 
                 Text("Find nearby paid parking and details you need at your fingertips!")
                     .foregroundStyle(Colors.text)
                     .font(Fonts.heading)
                     .lineSpacing(Spacing.small)
+                    .accessibilityIdentifier(ViewIdentifiers.Text.slogan)
 
                 Spacer()
 
                 PrimaryButton(label: "Let's Start", action: {
                     viewModel.onContinue()
                 })
+                .accessibilityIdentifier(ViewIdentifiers.Button.onContinue)
             }
+            .accessibilityElement(children: .combine)
+            .accessibilityIdentifier(ViewIdentifiers.view)
             .padding(Spacing.large)
         }
     }
+}
+
+// MARK: - ViewIdentifiers
+extension WelcomeView {
+    private typealias ViewIdentifiers = WelcomeViewIdentifiers
+}
+
+private enum WelcomeViewIdentifiers {
+
+    enum Button {
+        static let onContinue = "button_onContinue"
+    }
+    enum Icon {
+        static let logo = "icon_logo"
+    }
+
+    enum Text {
+        static let slogan = "text_slogan"
+    }
+
+    static let view = "welcomeView"
 }
 
 #Preview {

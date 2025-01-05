@@ -31,19 +31,24 @@ extension LocationDisabledView {
                 .scaledToFit()
                 .frame(width: IconSize.large, height: IconSize.large)
                 .padding(.top, Spacing.giant)
+                .accessibilityIdentifier(ViewIdentifiers.Icon.location)
 
             Text("Enable Location Services")
                 .foregroundStyle(Colors.text)
                 .font(Fonts.heading)
+                .accessibilityIdentifier(ViewIdentifiers.Text.title)
 
             Text(getRichDescription(of: "Park Around needs your location to provide you with nearby parking spots around your current location.", highlightedText: "Park Around"))
                 .lineSpacing(Spacing.tiny)
                 .foregroundStyle(Colors.text)
                 .font(Fonts.body)
+                .accessibilityIdentifier(ViewIdentifiers.Text.description)
 
             Spacer()
             openSettings
         }
+        .accessibilityElement(children: .combine)
+        .accessibilityIdentifier(ViewIdentifiers.view)
     }
 
     private var openSettings: some View {
@@ -54,6 +59,7 @@ extension LocationDisabledView {
                 }
             }
         })
+        .accessibilityIdentifier(ViewIdentifiers.Button.enableLocation)
     }
 
     private func getRichDescription(of text: String, highlightedText: String) -> AttributedString {
@@ -65,6 +71,29 @@ extension LocationDisabledView {
         return attributedString
     }
 
+}
+
+// MARK: - ViewIdentifiers
+extension LocationDisabledView {
+    private typealias ViewIdentifiers = LocationDisabledViewIdentifiers
+}
+
+private enum LocationDisabledViewIdentifiers {
+
+    enum Button {
+        static let enableLocation = "button_enableLocation"
+    }
+    enum Icon {
+        static let location = "icon_location"
+    }
+
+    enum Text {
+        static let title = "text_enableLocation"
+        static let description = "text_enableLocationDescription"
+
+    }
+
+    static let view = "locationDisabledView"
 }
 
 #Preview {

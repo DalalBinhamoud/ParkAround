@@ -49,6 +49,8 @@ struct ParkingSpotsMapView<ViewModel>: View where ViewModel: ParkingSpotsMapView
                     LoadingOverlay()
                 }
             }
+            .accessibilityElement(children: .combine)
+            .accessibilityIdentifier(ViewIdentifiers.view)
             .navigationDestination(isPresented: $navigateToDetails) {
                 // TODO: handle optional
                 ParkingDetailsView(
@@ -100,6 +102,7 @@ extension ParkingSpotsMapView {
                     }
                 }
             }
+            .accessibilityIdentifier(ViewIdentifiers.mapView)
             .sheet(isPresented: $isSheetPresented) {
                 ParkingDetailsSheetView(details: selectedParking ??  ParkingDetails.StubFactory.make()) {
                     withAnimation {
@@ -125,8 +128,24 @@ extension ParkingSpotsMapView {
                 .resizable()
                 .frame(width: Constants.userLocationIcon , height: Constants.userLocationIcon)
         })
+        .accessibilityIdentifier(ViewIdentifiers.Button.userLocation)
         .padding(Spacing.medium)
     }
+}
+
+// MARK: - ViewIdentifiers
+extension ParkingSpotsMapView {
+    private typealias ViewIdentifiers = ParkingSpotsMapViewIdentifiers
+}
+
+private enum ParkingSpotsMapViewIdentifiers {
+
+    enum Button {
+        static let userLocation = "button_userLocation"
+    }
+
+    static let mapView = "mapView"
+    static let view = "parkingSpotsMapView"
 }
 
 private enum Constants {
