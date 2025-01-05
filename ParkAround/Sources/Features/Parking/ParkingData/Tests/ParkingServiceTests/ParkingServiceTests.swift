@@ -49,7 +49,7 @@ final class ParkingServiceTests: XCTestCase {
 
             // Given
         let expectedResult = ParkingDetailsDTO.StubFactory.make()
-            apiServiceSpy.sendRequestReturnResult = .success(expectedResult)
+            apiServiceSpy.sendRequestReturnResult = .success([expectedResult])
 
             // When
         let result = try await sut.getNearbyParkingSpots(userLocation: GeoLocation.StubFactory.make())

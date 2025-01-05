@@ -121,12 +121,21 @@ extension ParkingDetailsView {
                     .font(Fonts.subheading)
             }
 
-            PrimaryButton(label: "Pay", action: {
+
+            PrimaryButton(
+                label: "Pay",
+                isDisabled: viewModel.isButtonDisabled,
+                action: {
                 Task {
                     await viewModel.processPayment()
                 }
             })
-            .disabled(viewModel.isLoading)
+            .disabled(viewModel.isButtonDisabled)
+            if viewModel.parkingDetails.parkingStatus == .occupied {
+                Text("You can't reserve and pay for occupied parking spot")
+                    .font(Fonts.caption)
+                    .foregroundStyle(Colors.text)
+            }
         }
 
     }
@@ -137,6 +146,7 @@ extension ParkingDetailsView {
         var selectedTime = 1
         var totalPrice = 10.0
         var isLoading = false
+        var isButtonDisabled = false
         var isAlertVisible = false
         var parkingDetails = ParkingDetails.StubFactory.make()
         var alertContent = AlertContent.StubFactory.make()

@@ -13,7 +13,7 @@ struct ParkingSearchView: View {
 
     var body: some View {
         HStack {
-            TextField("Search for parking name and address", text: $searchQuery)
+            TextField("Search for parking...", text: $searchQuery)
                 .padding(Spacing.small)
                 .background(Colors.background)
                 .cornerRadius(CornerRadius.small)

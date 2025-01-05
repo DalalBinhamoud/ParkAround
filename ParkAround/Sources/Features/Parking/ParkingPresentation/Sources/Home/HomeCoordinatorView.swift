@@ -42,6 +42,7 @@ struct HomeCoordinatorView: View {
                         }, label: {
                             Image("reservations-history", bundle: .main)
                                 .resizable()
+                                .foregroundStyle(Colors.primary)
                                 .frame(width: IconSize.small, height: IconSize.small)
                         })
                     }

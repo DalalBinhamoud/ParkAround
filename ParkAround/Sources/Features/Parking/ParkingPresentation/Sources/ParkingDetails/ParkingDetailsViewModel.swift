@@ -15,6 +15,10 @@ class ParkingDetailsViewModel: ParkingDetailsViewModelProtocol {
     @Published var isLoading = false
     @Published var isAlertVisible = false
 
+    var isButtonDisabled: Bool {
+        parkingDetails.parkingStatus == .occupied || isLoading
+    }
+
     private let sessionManager: ActiveSessionManagerProtocol = ActiveSessionManager()
     var alertContent = AlertContent(title: "", message: "")
 

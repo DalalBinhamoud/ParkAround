@@ -11,14 +11,17 @@ struct PrimaryButton: View {
 
     // MARK: - Properties
     private let label: String
+    private var isDisabled = false
     private let action: () -> Void
 
     // MARK: - Init
     init(
         label: String,
+        isDisabled: Bool = false,
         action: @escaping () -> Void
     ) {
         self.label = label
+        self.isDisabled = isDisabled
         self.action = action
     }
 
@@ -33,7 +36,7 @@ struct PrimaryButton: View {
                 .padding(Spacing.medium)
         })
         .frame(maxWidth: .infinity)
-        .background(Colors.primary)
+        .background(isDisabled ? Colors.primary.opacity(0.4) : Colors.primary)
         .cornerRadius(CornerRadius.medium)
     }
 }
