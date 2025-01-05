@@ -7,7 +7,6 @@
 
 import Foundation
 
-// TODO: needed?
 class ApplicationService: ObservableObject, ApplicationServiceProtocol {
 
     @Published var networkClient: NetworkClientProtocol

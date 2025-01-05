@@ -6,7 +6,7 @@
         "longitude": -122.4194,
         "rate_per_hour": 5.0,
         "cost_per_hour": 10.3,
-        "available_spots": 12,
+        "available_spots": 49,
         "total_spots": 50
     },
     {
@@ -16,7 +16,7 @@
         "longitude": 46.6423718,
         "rate_per_hour": 4.4,
         "cost_per_hour": 5.3,
-        "available_spots": 40,
+        "available_spots": 50,
         "total_spots": 50
     }, 
     {
@@ -46,7 +46,7 @@
         "longitude": 46.642228,
         "rate_per_hour": 5.0,
         "cost_per_hour": 10.0,
-        "available_spots": 9,
+        "available_spots": 69,
         "total_spots": 80
     },
     {

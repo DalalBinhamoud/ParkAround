@@ -12,11 +12,12 @@ import SwiftData
 struct ParkAroundApp: App {
 
     let persistenceController = PersistenceController.shared
+    let alertManager = AlertManager()
 
     var body: some Scene {
         WindowGroup {
-            MainView()
-                .modelContainer(persistenceController.container)
+                MainView()
+                    .modelContainer(persistenceController.container)
         }
     }
 }

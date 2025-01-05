@@ -32,7 +32,9 @@ struct ReservationsHistoryView<ViewModel>: View where ViewModel: ReservationsHis
                     ScrollView {
                         ForEach(reservations) { reservation in
                             reservationCard(reservation: reservation)
+                                .padding()
                         }
+
                     }
 
                 }
@@ -66,6 +68,7 @@ extension ReservationsHistoryView {
                 .multilineTextAlignment(.center)
                 .font(Fonts.body)
         }
+        .padding()
     }
 
    private func reservationCard(reservation: ParkingReservation) -> some View {

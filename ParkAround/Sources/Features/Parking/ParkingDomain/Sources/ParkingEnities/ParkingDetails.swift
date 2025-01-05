@@ -23,7 +23,10 @@ struct ParkingDetails: Hashable, Identifiable {
     }
 
     var occupancyPercentage: Double {
-        Double((availableSpots / totalSpots) * 100)
+        let doubledAvailableSpots = Double(availableSpots)
+        let doubledTotalSpots = Double(totalSpots)
+        let result = (doubledAvailableSpots / doubledTotalSpots)  * 100
+        return result
     }
 
     /*

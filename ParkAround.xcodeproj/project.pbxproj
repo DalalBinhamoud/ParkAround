@@ -22,11 +22,7 @@
 		E47090882D22FF4A005C3F43 /* ParkAroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090872D22FF4A005C3F43 /* ParkAroundTests.swift */; };
 		E47090922D22FF4A005C3F43 /* ParkAroundUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090912D22FF4A005C3F43 /* ParkAroundUITests.swift */; };
 		E47090942D22FF4A005C3F43 /* ParkAroundUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090932D22FF4A005C3F43 /* ParkAroundUITestsLaunchTests.swift */; };
-		E47090AC2D2300CD005C3F43 /* AlertWrapperViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090AB2D2300CD005C3F43 /* AlertWrapperViewModel.swift */; };
-		E47090AE2D2300D8005C3F43 /* AlertWrapperViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090AD2D2300D8005C3F43 /* AlertWrapperViewModelProtocol.swift */; };
-		E47090B02D2300E3005C3F43 /* AlertWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090AF2D2300E3005C3F43 /* AlertWrapperView.swift */; };
 		E47090B82D230160005C3F43 /* ApplicationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090B72D230160005C3F43 /* ApplicationService.swift */; };
-		E47090BA2D230192005C3F43 /* ErrorHandlingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090B92D230192005C3F43 /* ErrorHandlingViewModel.swift */; };
 		E47090C32D2302BF005C3F43 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090C22D2302BF005C3F43 /* AppComponent.swift */; };
 		E47090C52D2302D3005C3F43 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090C42D2302D3005C3F43 /* AppCoordinator.swift */; };
 		E47090C72D2302DA005C3F43 /* AppCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47090C62D2302DA005C3F43 /* AppCoordinatorView.swift */; };
@@ -65,6 +61,14 @@
 		E47091482D23CE05005C3F43 /* ParkingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47091472D23CE05005C3F43 /* ParkingCoordinator.swift */; };
 		E470914D2D23F609005C3F43 /* GeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E470914C2D23F609005C3F43 /* GeoLocation.swift */; };
 		E470914F2D23F63D005C3F43 /* GeoLocationStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E470914E2D23F63D005C3F43 /* GeoLocationStub.swift */; };
+		E4807A722D2ACC5000FA2CC2 /* AlertManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4807A712D2ACC5000FA2CC2 /* AlertManagerProtocol.swift */; };
+		E4807A742D2ACC5600FA2CC2 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4807A732D2ACC5600FA2CC2 /* AlertManager.swift */; };
+		E4807A762D2ACD7A00FA2CC2 /* AlertManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4807A752D2ACD7A00FA2CC2 /* AlertManagerMock.swift */; };
+		E4807A792D2ACE2E00FA2CC2 /* AlertWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4807A782D2ACE2E00FA2CC2 /* AlertWrapperView.swift */; };
+		E4807A7B2D2ACFFB00FA2CC2 /* AlertManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4807A7A2D2ACFFB00FA2CC2 /* AlertManagerTest.swift */; };
+		E4807A7D2D2AD8E800FA2CC2 /* AlertContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4807A7C2D2AD8E800FA2CC2 /* AlertContent.swift */; };
+		E4807A7F2D2AD92D00FA2CC2 /* AlertContentStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4807A7E2D2AD92D00FA2CC2 /* AlertContentStub.swift */; };
+		E4807A812D2ADEFC00FA2CC2 /* NetworkMointor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4807A802D2ADEFC00FA2CC2 /* NetworkMointor.swift */; };
 		E4C4CC572D2918FB004EA2FF /* URLOpenerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC562D2918FB004EA2FF /* URLOpenerSpy.swift */; };
 		E4C4CC5B2D2929F8004EA2FF /* TimeSlotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC5A2D2929F8004EA2FF /* TimeSlotsView.swift */; };
 		E4C4CC5D2D293D76004EA2FF /* InlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC5C2D293D76004EA2FF /* InlineButton.swift */; };
@@ -144,11 +148,7 @@
 		E470908D2D22FF4A005C3F43 /* ParkAroundUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkAroundUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E47090912D22FF4A005C3F43 /* ParkAroundUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkAroundUITests.swift; sourceTree = "<group>"; };
 		E47090932D22FF4A005C3F43 /* ParkAroundUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkAroundUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		E47090AB2D2300CD005C3F43 /* AlertWrapperViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWrapperViewModel.swift; sourceTree = "<group>"; };
-		E47090AD2D2300D8005C3F43 /* AlertWrapperViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWrapperViewModelProtocol.swift; sourceTree = "<group>"; };
-		E47090AF2D2300E3005C3F43 /* AlertWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWrapperView.swift; sourceTree = "<group>"; };
 		E47090B72D230160005C3F43 /* ApplicationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationService.swift; sourceTree = "<group>"; };
-		E47090B92D230192005C3F43 /* ErrorHandlingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandlingViewModel.swift; sourceTree = "<group>"; };
 		E47090C22D2302BF005C3F43 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
 		E47090C42D2302D3005C3F43 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		E47090C62D2302DA005C3F43 /* AppCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorView.swift; sourceTree = "<group>"; };
@@ -187,7 +187,15 @@
 		E47091472D23CE05005C3F43 /* ParkingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingCoordinator.swift; sourceTree = "<group>"; };
 		E470914C2D23F609005C3F43 /* GeoLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocation.swift; sourceTree = "<group>"; };
 		E470914E2D23F63D005C3F43 /* GeoLocationStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationStub.swift; sourceTree = "<group>"; };
-		E4C4CC562D2918FB004EA2FF /* URLOpenerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = URLOpenerSpy.swift; path = ParkAround/Sources/Utilities/URLOpener/URLOpenerSpy.swift; sourceTree = SOURCE_ROOT; };
+		E4807A712D2ACC5000FA2CC2 /* AlertManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManagerProtocol.swift; sourceTree = "<group>"; };
+		E4807A732D2ACC5600FA2CC2 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		E4807A752D2ACD7A00FA2CC2 /* AlertManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManagerMock.swift; sourceTree = "<group>"; };
+		E4807A782D2ACE2E00FA2CC2 /* AlertWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWrapperView.swift; sourceTree = "<group>"; };
+		E4807A7A2D2ACFFB00FA2CC2 /* AlertManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlertManagerTest.swift; path = ParkAround/Tests/HomeTests/AlertManagerTest.swift; sourceTree = SOURCE_ROOT; };
+		E4807A7C2D2AD8E800FA2CC2 /* AlertContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContent.swift; sourceTree = "<group>"; };
+		E4807A7E2D2AD92D00FA2CC2 /* AlertContentStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertContentStub.swift; sourceTree = "<group>"; };
+		E4807A802D2ADEFC00FA2CC2 /* NetworkMointor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMointor.swift; sourceTree = "<group>"; };
+		E4C4CC562D2918FB004EA2FF /* URLOpenerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = URLOpenerSpy.swift; path = ParkAround/Tests/TestDoubles/Spies/URLOpenerSpy.swift; sourceTree = SOURCE_ROOT; };
 		E4C4CC5A2D2929F8004EA2FF /* TimeSlotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotsView.swift; sourceTree = "<group>"; };
 		E4C4CC5C2D293D76004EA2FF /* InlineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineButton.swift; sourceTree = "<group>"; };
 		E4C4CC5E2D29806B004EA2FF /* ParkingDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -386,6 +394,7 @@
 		E47090A12D22FF6F005C3F43 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				E4807A772D2ACDFE00FA2CC2 /* AlertWarapper */,
 				E42352FC2D26C990003E28D8 /* AppLaunch */,
 				E4E2CDD52D25345800ABC583 /* LocationDisabled */,
 				E4E2CDCE2D252ECB00ABC583 /* Welcome */,
@@ -404,6 +413,7 @@
 				E47090D92D2303CB005C3F43 /* NetworkClient.swift */,
 				E47090DB2D2303D5005C3F43 /* NetworkClientProtocol.swift */,
 				E4F0D2172D2579B400017BAA /* MockedNetworkClient.swift */,
+				E4807A802D2ADEFC00FA2CC2 /* NetworkMointor.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -432,7 +442,6 @@
 				E423530B2D28256B003E28D8 /* URLOpener */,
 				E4F0D2142D25774B00017BAA /* JSONLoader */,
 				E47090A62D22FFE8005C3F43 /* Managers */,
-				E47090A82D230039005C3F43 /* AlertWrapper */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -440,23 +449,13 @@
 		E47090A62D22FFE8005C3F43 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				E4807A702D2ACC3E00FA2CC2 /* AlertManager */,
 				E4C4CC6B2D299E97004EA2FF /* ActiveSessionManager */,
 				E47090C82D230324005C3F43 /* Location */,
 				E4E2CDEB2D2559C000ABC583 /* Notification */,
 				E4E2CDE62D2559A000ABC583 /* Timer */,
 			);
 			path = Managers;
-			sourceTree = "<group>";
-		};
-		E47090A82D230039005C3F43 /* AlertWrapper */ = {
-			isa = PBXGroup;
-			children = (
-				E47090AB2D2300CD005C3F43 /* AlertWrapperViewModel.swift */,
-				E47090AD2D2300D8005C3F43 /* AlertWrapperViewModelProtocol.swift */,
-				E47090AF2D2300E3005C3F43 /* AlertWrapperView.swift */,
-				E47090B92D230192005C3F43 /* ErrorHandlingViewModel.swift */,
-			);
-			path = AlertWrapper;
 			sourceTree = "<group>";
 		};
 		E47090A92D230072005C3F43 /* ApplicationService */ = {
@@ -571,6 +570,7 @@
 		E47090E72D232E6E005C3F43 /* HomeTests */ = {
 			isa = PBXGroup;
 			children = (
+				E4807A7A2D2ACFFB00FA2CC2 /* AlertManagerTest.swift */,
 			);
 			path = HomeTests;
 			sourceTree = "<group>";
@@ -592,6 +592,7 @@
 				E47090EF2D232F4F005C3F43 /* LocationManagerMock.swift */,
 				E47090F12D233779005C3F43 /* ApplicationServiceMock.swift */,
 				E47090F32D2337CE005C3F43 /* NetworkClientMock.swift */,
+				E4807A752D2ACD7A00FA2CC2 /* AlertManagerMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -758,6 +759,7 @@
 				E4C4CC712D29A3A3004EA2FF /* ParkingReservation.swift */,
 				E4C4CCBA2D2A6023004EA2FF /* FavoriteParking.swift */,
 				E4C4CCC22D2A66CC004EA2FF /* ParkingDetailsClass.swift */,
+				E4807A7C2D2AD8E800FA2CC2 /* AlertContent.swift */,
 			);
 			path = ParkingEnities;
 			sourceTree = "<group>";
@@ -845,6 +847,7 @@
 			children = (
 				E47091432D23CD52005C3F43 /* ParkingDetailsStub.swift */,
 				E470914E2D23F63D005C3F43 /* GeoLocationStub.swift */,
+				E4807A7E2D2AD92D00FA2CC2 /* AlertContentStub.swift */,
 			);
 			path = ParkingEntitiesTestDoubles;
 			sourceTree = "<group>";
@@ -888,6 +891,23 @@
 				E47090A22D22FF8C005C3F43 /* Networking */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		E4807A702D2ACC3E00FA2CC2 /* AlertManager */ = {
+			isa = PBXGroup;
+			children = (
+				E4807A712D2ACC5000FA2CC2 /* AlertManagerProtocol.swift */,
+				E4807A732D2ACC5600FA2CC2 /* AlertManager.swift */,
+			);
+			path = AlertManager;
+			sourceTree = "<group>";
+		};
+		E4807A772D2ACDFE00FA2CC2 /* AlertWarapper */ = {
+			isa = PBXGroup;
+			children = (
+				E4807A782D2ACE2E00FA2CC2 /* AlertWrapperView.swift */,
+			);
+			path = AlertWarapper;
 			sourceTree = "<group>";
 		};
 		E4C4CC582D2929CD004EA2FF /* SubViews */ = {
@@ -1142,10 +1162,11 @@
 				E42353042D26CA72003E28D8 /* MainView.swift in Sources */,
 				E47090D62D2303AF005C3F43 /* HTTPFields.swift in Sources */,
 				E47090C52D2302D3005C3F43 /* AppCoordinator.swift in Sources */,
-				E47090B02D2300E3005C3F43 /* AlertWrapperView.swift in Sources */,
 				E4E2CDCD2D25276100ABC583 /* HomeCoordinatorView.swift in Sources */,
 				E4F0D2222D2599D800017BAA /* ApplicationServiceProtocol.swift in Sources */,
+				E4807A7D2D2AD8E800FA2CC2 /* AlertContent.swift in Sources */,
 				E47091282D23B30F005C3F43 /* ParkingServiceSpy.swift in Sources */,
+				E4807A762D2ACD7A00FA2CC2 /* AlertManagerMock.swift in Sources */,
 				E47091142D23AC4C005C3F43 /* ParkingRepository.swift in Sources */,
 				E412AA932D2AB9340082E260 /* MakeRow.swift in Sources */,
 				E47090CD2D230346005C3F43 /* LocationManager.swift in Sources */,
@@ -1162,6 +1183,7 @@
 				E4C4CC752D29A4DE004EA2FF /* PersistenceController.swift in Sources */,
 				E4C4CC6F2D299F09004EA2FF /* ActiveSessionManagerProtocol.swift in Sources */,
 				E4C4CC652D298363004EA2FF /* PaymentRepositoryProtocol.swift in Sources */,
+				E4807A722D2ACC5000FA2CC2 /* AlertManagerProtocol.swift in Sources */,
 				E47091482D23CE05005C3F43 /* ParkingCoordinator.swift in Sources */,
 				E47090F22D233779005C3F43 /* ApplicationServiceMock.swift in Sources */,
 				E470910C2D239F7B005C3F43 /* ApiRequest.swift in Sources */,
@@ -1185,12 +1207,9 @@
 				E47091222D23B01C005C3F43 /* ParkingRepositorySpy.swift in Sources */,
 				E4E2CDEA2D2559BD00ABC583 /* TimerManagerProtocol.swift in Sources */,
 				E47091442D23CD52005C3F43 /* ParkingDetailsStub.swift in Sources */,
-				E47090AE2D2300D8005C3F43 /* AlertWrapperViewModelProtocol.swift in Sources */,
 				E47091122D23AAF2005C3F43 /* ParkingServiceProtocol.swift in Sources */,
 				E4C4CCC12D2A6280004EA2FF /* FavoriteParkingsViewModelProtocol.swift in Sources */,
-				E47090AC2D2300CD005C3F43 /* AlertWrapperViewModel.swift in Sources */,
 				E4E2CDD42D252F8100ABC583 /* WelcomeViewModelProtocol.swift in Sources */,
-				E47090BA2D230192005C3F43 /* ErrorHandlingViewModel.swift in Sources */,
 				E412AA902D2AA6B30082E260 /* ParkingDetailsSheetView.swift in Sources */,
 				E4C4CC722D29A3A3004EA2FF /* ParkingReservation.swift in Sources */,
 				E470910A2D239F00005C3F43 /* APIServiceProtocol.swift in Sources */,
@@ -1207,8 +1226,11 @@
 				E47090C32D2302BF005C3F43 /* AppComponent.swift in Sources */,
 				E47091202D23AFF8005C3F43 /* ErrorStub.swift in Sources */,
 				E4E2CDD92D253C4900ABC583 /* ParkingSpotsMapView.swift in Sources */,
+				E4807A742D2ACC5600FA2CC2 /* AlertManager.swift in Sources */,
 				E4E2CDEF2D2559DA00ABC583 /* NotificationManagerProtocol.swift in Sources */,
+				E4807A7F2D2AD92D00FA2CC2 /* AlertContentStub.swift in Sources */,
 				E4C4CC5F2D29806B004EA2FF /* ParkingDetailsViewModel.swift in Sources */,
+				E4807A792D2ACE2E00FA2CC2 /* AlertWrapperView.swift in Sources */,
 				E47091082D239EF5005C3F43 /* APIService.swift in Sources */,
 				E47091242D23B1D7005C3F43 /* ParkingDetailsDTOStub.swift in Sources */,
 				E47090FA2D239C42005C3F43 /* Stubable.swift in Sources */,
@@ -1221,6 +1243,7 @@
 				E47090D12D23036C005C3F43 /* LocationManagerProtocol.swift in Sources */,
 				E4C4CC5D2D293D76004EA2FF /* InlineButton.swift in Sources */,
 				E423530D2D282579003E28D8 /* URLOpener.swift in Sources */,
+				E4807A812D2ADEFC00FA2CC2 /* NetworkMointor.swift in Sources */,
 				E4C4CC7B2D29A7B2004EA2FF /* ReservationsHistoryViewModelProtocol.swift in Sources */,
 				E42352FE2D26C99F003E28D8 /* SplashView.swift in Sources */,
 			);
@@ -1234,6 +1257,7 @@
 				E470912F2D23B9B1005C3F43 /* ParkingDetailsMapperTests.swift in Sources */,
 				E47091322D23BB5D005C3F43 /* ParkingRepositoryTests.swift in Sources */,
 				E4E2CDE22D2549EA00ABC583 /* NearbyParkingSpotsRequestTests.swift in Sources */,
+				E4807A7B2D2ACFFB00FA2CC2 /* AlertManagerTest.swift in Sources */,
 				E47090882D22FF4A005C3F43 /* ParkAroundTests.swift in Sources */,
 				E4F0D2202D2588B600017BAA /* ParkingSpotDetailsRequestTests.swift in Sources */,
 			);

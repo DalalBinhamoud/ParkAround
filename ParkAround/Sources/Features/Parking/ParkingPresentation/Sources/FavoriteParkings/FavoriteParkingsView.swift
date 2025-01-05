@@ -31,6 +31,7 @@ struct FavoriteParkingsView<ViewModel>: View where ViewModel: FavoriteParkingsVi
                 ScrollView {
                     ForEach(favoriteParkings) { favoriteParking in
                         favoriteParkingCard(favoriteParking: favoriteParking)
+                            .padding()
                     }
                 }
             }

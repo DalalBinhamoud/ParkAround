@@ -14,8 +14,12 @@ class ParkingDetailsViewModel: ParkingDetailsViewModelProtocol {
     // MARK: - Properties
     @Published var selectedTime: Int = 1
     @Published var isLoading = false
+    @Published var isAlertVisible = false
+
     private var context: ModelContext?
     private let sessionManager: ActiveSessionManagerProtocol = ActiveSessionManager()
+
+    var alertContent = AlertContent(title: "", message: "")
 
     var totalPrice: Double {
         Double(selectedTime) * parkingDetails.costPerHour
@@ -44,9 +48,14 @@ class ParkingDetailsViewModel: ParkingDetailsViewModelProtocol {
             sessionManager.startSession(duration: TimeInterval(((selectedTime * 60) * 60)))
             addReservation()
 
+            alertContent = AlertContent(title: "Success", message: "Reservation has been done successfully")
+            isAlertVisible = true
+
         } catch {
-            // TODO: handle error
             isLoading = false
+            alertContent = AlertContent(title: "Error", message: "Failed to pay")
+            isAlertVisible = true
+
         }
     }
 

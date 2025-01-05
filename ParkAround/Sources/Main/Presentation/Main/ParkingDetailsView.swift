@@ -53,6 +53,15 @@ struct ParkingDetailsView<ViewModel>: View where ViewModel: ParkingDetailsViewMo
                 LoadingOverlay()
             }
         }
+        .alert(isPresented: $viewModel.isAlertVisible) {
+            Alert(
+                title: Text(viewModel.alertContent.title),
+                message: Text(viewModel.alertContent.message),
+                dismissButton: .default(Text("Ok"), action: {
+                    viewModel.isAlertVisible = false
+                })
+            )
+        }
     }
 }
 
@@ -128,7 +137,10 @@ extension ParkingDetailsView {
         var selectedTime = 1
         var totalPrice = 10.0
         var isLoading = false
+        var isAlertVisible = false
         var parkingDetails = ParkingDetails.StubFactory.make()
+        var alertContent = AlertContent.StubFactory.make()
+
         func addToFavorite() { }
         func getRateIcon() -> String { return "star" }
         func processPayment() async { }

@@ -43,7 +43,7 @@ class ParkingSpotsMapViewModel: ParkingSpotsMapViewModelProtocol {
             parkingSpots = try await parkingRepository.fetchParkingSpots(userLocation: applicationService.locationManager.lastLocation ?? GeoLocation(latitude: 24000, longitude: 46000))
             isLoading = false
         } catch {
-            isLoading = true
+            isLoading = false
         }
     }
 

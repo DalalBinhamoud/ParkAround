@@ -13,9 +13,12 @@ struct ParkingSpotsMapView<ViewModel>: View where ViewModel: ParkingSpotsMapView
 
     // MARK: - Properties
     @ObservedObject private var viewModel: ViewModel
+    @State private var isSheetPresented = false
     @State private var navigateToDetails = false
     @State private var searchQuery = ""
     @State private var selectedParking: ParkingDetails?
+
+    @State private var networkMonitor = NetworkMonitor()
 
     // MARK: - Map Config
     //    private let RiyadhRegion = CLLocationCoordinate2D(latitude: 24.774265, longitude: 46.738586)
@@ -31,6 +34,9 @@ struct ParkingSpotsMapView<ViewModel>: View where ViewModel: ParkingSpotsMapView
     var body: some View {
         NavigationStack{
             ZStack {
+                Colors.backgroundMedium
+                    .ignoresSafeArea()
+
                 VStack {
                     ParkingSearchView(searchQuery: $searchQuery)
                     mapContent
@@ -44,12 +50,22 @@ struct ParkingSpotsMapView<ViewModel>: View where ViewModel: ParkingSpotsMapView
                 // TODO: handle optional
                 ParkingDetailsView(
                     viewModel: ParkingDetailsViewModel(
-                        parkingDetails: selectedParking ?? ParkingDetails.StubFactory.make(),
+                        parkingDetails: selectedParking ?? ParkingDetails.StubFactory.make(), 
                         paymentRepository: viewModel.paymentRepository,
                         context: viewModel.modelContext ?? nil
                     )
                 )
             }
+        }
+        .alert(isPresented: $networkMonitor.showAlert) {
+            Alert(
+                title: Text("No Internet Connection"),
+                message: Text("Please check your network settings and try again"),
+                dismissButton: .default(Text("Ok"), action: {
+                    networkMonitor.showAlert = false
+                })
+
+            )
         }
         .onAppear {
             Task {
@@ -72,19 +88,20 @@ extension ParkingSpotsMapView {
                     Annotation(parkingDetails.name, coordinate: parkingDetails.coordinate) {
                         Button(action: {
                             selectedParking = parkingDetails
+                            isSheetPresented = true
                         }, label: {
                             Image(viewModel.getParkingMarker(for: parkingDetails.parkingStatus), bundle: .main)
                                 .resizable()
-                                .frame(width: Constants.iconSize, height: Constants.iconSize) // TODO: scale
+                                .frame(width: Constants.iconSize, height: Constants.iconSize)
                         })
                     }
                 }
             }
-            .sheet(item: $selectedParking) { spot in
-                ParkingDetailsSheetView(details: spot) {
+            .sheet(isPresented: $isSheetPresented) {
+                ParkingDetailsSheetView(details: selectedParking ??  ParkingDetails.StubFactory.make()) {
                     withAnimation {
                         navigateToDetails = true
-                        selectedParking = nil // dismiss sheet
+                        isSheetPresented = false // dismiss sheet
                     }
                 }
                 .presentationDetents([.height(Constants.sheetHight), .medium])
