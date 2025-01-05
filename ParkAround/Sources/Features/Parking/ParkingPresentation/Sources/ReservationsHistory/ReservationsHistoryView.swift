@@ -82,8 +82,8 @@ extension ReservationsHistoryView {
             MakeRow(imageName: "mappin.and.ellipse", title: reservation.address.description)
             MakeRow(imageName: "dollarsign.circle", title: "\(reservation.cost)")
         }
+       .foregroundStyle(.white)
        .padding()
-//       .frame(maxWidth: .infinity)
        .background(Colors.primary)
        .cornerRadius(CornerRadius.large)
        .shadow(radius: 3)

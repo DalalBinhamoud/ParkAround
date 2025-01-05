@@ -11,6 +11,7 @@ import SwiftData
 protocol ParkingSpotsMapViewModelProtocol: ObservableObject {
     var isLoading: Bool { get }
     var parkingSpots: [ParkingDetails] { get }
+    var parkingRepository: ParkingRepositoryProtocol { get }
     var paymentRepository: PaymentRepositoryProtocol { get }
     var modelContext: ModelContext? {get }
 

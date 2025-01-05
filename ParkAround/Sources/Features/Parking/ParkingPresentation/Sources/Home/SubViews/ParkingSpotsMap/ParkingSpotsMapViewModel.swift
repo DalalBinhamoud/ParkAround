@@ -14,7 +14,7 @@ class ParkingSpotsMapViewModel: ParkingSpotsMapViewModelProtocol {
     // MARK: - Properties
     @Published var isLoading = false
     @Published var parkingSpots: [ParkingDetails] = []
-    let applicationService: ApplicationService
+    let applicationService: ApplicationServiceProtocol
     let parkingRepository: ParkingRepositoryProtocol
     let paymentRepository: PaymentRepositoryProtocol
     var modelContext: ModelContext?
@@ -22,7 +22,7 @@ class ParkingSpotsMapViewModel: ParkingSpotsMapViewModelProtocol {
 
     // MARK: - Init
     init(
-        applicationService: ApplicationService,
+        applicationService: ApplicationServiceProtocol,
         parkingRepository: ParkingRepositoryProtocol,
         paymentRepository: PaymentRepositoryProtocol,
         modelContext: ModelContext? = nil

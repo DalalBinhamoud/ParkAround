@@ -5,20 +5,29 @@
 //  Created by Dalal Macbook on 31/12/2024.
 //
 
+import SwiftData
 import XCTest
+
 @testable import ParkAround
+
 
 final class ParkingRepositoryTests: XCTestCase {
 
     private var serviceSpy: ParkingServiceSpy!
     private var sut: ParkingRepository!
 
+    let container = try! ModelContainer(for: ParkingReservation.self)
+
     // MARK: - Setup
+    @MainActor
     override func setUp() {
         super.setUp()
 
         serviceSpy = ParkingServiceSpy()
-        sut = ParkingRepository(parkingService: serviceSpy)
+        sut = ParkingRepository(
+            parkingService: serviceSpy,
+            context: container.mainContext
+        )
     }
 
     override func tearDown() {

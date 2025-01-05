@@ -53,9 +53,9 @@ struct ParkingSpotsMapView<ViewModel>: View where ViewModel: ParkingSpotsMapView
                 // TODO: handle optional
                 ParkingDetailsView(
                     viewModel: ParkingDetailsViewModel(
-                        parkingDetails: selectedParking ?? ParkingDetails.StubFactory.make(), 
-                        paymentRepository: viewModel.paymentRepository,
-                        context: viewModel.modelContext ?? nil
+                        parkingDetails: selectedParking ?? ParkingDetails.StubFactory.make(),
+                        parkingRepository: viewModel.parkingRepository,
+                        paymentRepository: viewModel.paymentRepository
                     )
                 )
             }
@@ -133,22 +133,4 @@ private enum Constants {
     static let sheetHight: CGFloat = 200 // TODO: read geometry
     static let iconSize: CGFloat = 50
     static let userLocationIcon: CGFloat = 60
-}
-
-#Preview {
-    class ViewModelFixture: ParkingSpotsMapViewModelProtocol {
-        var modelContext: ModelContext? = nil
-        var isLoading = false
-        var parkingSpots: [ParkingDetails] = [
-            ParkingDetails(id: 1, name: "parking 1", rate: 3.2, costPerHour: 30.0, address: GeoLocation(latitude: 24.7519539, longitude: 46.6421894), availableSpots: 12, totalSpots: 30),
-            ParkingDetails(id: 2, name: "parking 2", rate: 4.5, costPerHour: 30.0,address: GeoLocation(latitude: 24.7519636, longitude: 46.642228), availableSpots: 45, totalSpots: 50)
-        ]
-        var paymentRepository: PaymentRepositoryProtocol = PaymentRepository()
-        func onAppear() { /*Preview*/ }
-        func getParkingMarker(for status: ParkingStatus) -> String { return "park-marker-available" }
-    }
-
-    return ParkingSpotsMapView(
-        searchQuery: .constant(""), viewModel: ViewModelFixture()
-    )
 }

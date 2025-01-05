@@ -28,7 +28,10 @@ class HomeCoordinator: ObservableObject {
     ) {
         self.currentView = currentView
         self.applicationService = applicationService
-        self.parkingRepository = ParkingRepository(parkingService: parkingService)
+        self.parkingRepository = ParkingRepository(
+            parkingService: parkingService,
+            context: context
+        )
         self.paymentRepository = PaymentRepository()
     }
 

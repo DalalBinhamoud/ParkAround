@@ -12,31 +12,39 @@ final class ParkingRepositorySpy: ParkingRepositoryProtocol {
     // MARK: - Init
     init() { }
 
-    var fetchParkingSpotsTasks = Task<[ParkingDetails], Error> { throw ErrorStub() }
+    var fetchParkingSpotsTask = Task<[ParkingDetails], Error> { throw ErrorStub() }
     var fetchParkingSpotsCallsCount = 0
     func fetchParkingSpots(userLocation: GeoLocation) async throws -> [ParkingDetails] {
         fetchParkingSpotsCallsCount += 1
-        return try await fetchParkingSpotsTasks.value
+        return try await fetchParkingSpotsTask.value
     }
 
-    var processPaymentTasks = Task<Bool, Error> { throw ErrorStub() }
-    var processPaymentCallsCount = 0
-    func processPayment(amount: Double) async throws -> Bool {
-        processPaymentCallsCount += 1
-        return try await processPaymentTasks.value
-    }
-
-    var fetchReservationsHistoryTasks = Task<[ParkingReservation], Error> { throw ErrorStub() }
+    // MARK: Parking Reservation
+    var fetchReservationsHistoryTask = Task<[ParkingReservation], Error> { throw ErrorStub() }
     var fetchReservationsHistoryCallsCount = 0
     func fetchReservationsHistory() async throws -> [ParkingReservation] {
         fetchReservationsHistoryCallsCount += 1
-        return try await fetchReservationsHistoryTasks.value
+        return try await fetchReservationsHistoryTask.value
     }
 
+
+    var addReservationCallsCount = 0
+    func addReservation(for parkingDetails: ParkingDetails, totalPrice: Double, selectedTime: Int) {
+        addReservationCallsCount += 1
+    }
+
+
+    // MARK: Favorite Parking
     var fetchFavoriteParkingsTask = Task<[FavoriteParking],Error> { throw ErrorStub() }
     var fetchFavoriteParkingsCallsCount = 0
     func fetchFavoriteParkings() async throws -> [FavoriteParking] {
         fetchFavoriteParkingsCallsCount += 1
         return try await fetchFavoriteParkingsTask.value
     }
+
+    var addToFavoriteCallsCount = 0
+    func addToFavorite(parkingDetails: ParkingDetails) {
+        addToFavoriteCallsCount += 1
+    }
+
 }
