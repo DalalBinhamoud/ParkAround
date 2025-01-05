@@ -76,6 +76,11 @@
 		E4C4CC772D29A78E004EA2FF /* ReservationsHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC762D29A78E004EA2FF /* ReservationsHistoryViewModel.swift */; };
 		E4C4CC792D29A799004EA2FF /* ReservationsHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC782D29A799004EA2FF /* ReservationsHistoryView.swift */; };
 		E4C4CC7B2D29A7B2004EA2FF /* ReservationsHistoryViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC7A2D29A7B2004EA2FF /* ReservationsHistoryViewModelProtocol.swift */; };
+		E4C4CCBB2D2A6023004EA2FF /* FavoriteParking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CCBA2D2A6023004EA2FF /* FavoriteParking.swift */; };
+		E4C4CCBD2D2A626C004EA2FF /* FavoriteParkingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CCBC2D2A626C004EA2FF /* FavoriteParkingsView.swift */; };
+		E4C4CCBF2D2A6278004EA2FF /* FavoriteParkingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CCBE2D2A6278004EA2FF /* FavoriteParkingsViewModel.swift */; };
+		E4C4CCC12D2A6280004EA2FF /* FavoriteParkingsViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CCC02D2A6280004EA2FF /* FavoriteParkingsViewModelProtocol.swift */; };
+		E4C4CCC32D2A66CC004EA2FF /* ParkingDetailsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CCC22D2A66CC004EA2FF /* ParkingDetailsClass.swift */; };
 		E4E2CDC92D2520F300ABC583 /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E2CDC82D2520F200ABC583 /* Routes.swift */; };
 		E4E2CDCB2D25275900ABC583 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E2CDCA2D25275900ABC583 /* HomeCoordinator.swift */; };
 		E4E2CDCD2D25276100ABC583 /* HomeCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E2CDCC2D25276100ABC583 /* HomeCoordinatorView.swift */; };
@@ -188,8 +193,13 @@
 		E4C4CC712D29A3A3004EA2FF /* ParkingReservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingReservation.swift; sourceTree = "<group>"; };
 		E4C4CC742D29A4DE004EA2FF /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		E4C4CC762D29A78E004EA2FF /* ReservationsHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReservationsHistoryViewModel.swift; path = ParkAround/Sources/Main/ReservationsHistoryViewModel.swift; sourceTree = SOURCE_ROOT; };
-		E4C4CC782D29A799004EA2FF /* ReservationsHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReservationsHistoryView.swift; path = ParkAround/Sources/Main/ReservationsHistoryView.swift; sourceTree = SOURCE_ROOT; };
+		E4C4CC782D29A799004EA2FF /* ReservationsHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReservationsHistoryView.swift; path = ParkAround/Sources/Features/Parking/ParkingPresentation/Sources/ReservationsHistory/ReservationsHistoryView.swift; sourceTree = SOURCE_ROOT; };
 		E4C4CC7A2D29A7B2004EA2FF /* ReservationsHistoryViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ReservationsHistoryViewModelProtocol.swift; path = ParkAround/Sources/Main/ReservationsHistoryViewModelProtocol.swift; sourceTree = SOURCE_ROOT; };
+		E4C4CCBA2D2A6023004EA2FF /* FavoriteParking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteParking.swift; sourceTree = "<group>"; };
+		E4C4CCBC2D2A626C004EA2FF /* FavoriteParkingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoriteParkingsView.swift; path = ParkAround/Sources/Features/Parking/ParkingPresentation/Sources/FavoriteParkings/FavoriteParkingsView.swift; sourceTree = SOURCE_ROOT; };
+		E4C4CCBE2D2A6278004EA2FF /* FavoriteParkingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoriteParkingsViewModel.swift; path = ParkAround/Sources/Features/Parking/ParkingDomain/Sources/ParkingEnities/FavoriteParkingsViewModel.swift; sourceTree = SOURCE_ROOT; };
+		E4C4CCC02D2A6280004EA2FF /* FavoriteParkingsViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoriteParkingsViewModelProtocol.swift; path = ParkAround/Sources/Features/Parking/ParkingDomain/Sources/ParkingEnities/FavoriteParkingsViewModelProtocol.swift; sourceTree = SOURCE_ROOT; };
+		E4C4CCC22D2A66CC004EA2FF /* ParkingDetailsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsClass.swift; sourceTree = "<group>"; };
 		E4E2CDC82D2520F200ABC583 /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		E4E2CDCA2D25275900ABC583 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		E4E2CDCC2D25276100ABC583 /* HomeCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinatorView.swift; sourceTree = "<group>"; };
@@ -453,18 +463,21 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
-		E47090C02D230208005C3F43 /* Favorites */ = {
+		E47090C02D230208005C3F43 /* FavoriteParkings */ = {
 			isa = PBXGroup;
 			children = (
+				E4C4CCBC2D2A626C004EA2FF /* FavoriteParkingsView.swift */,
+				E4C4CCBE2D2A6278004EA2FF /* FavoriteParkingsViewModel.swift */,
+				E4C4CCC02D2A6280004EA2FF /* FavoriteParkingsViewModelProtocol.swift */,
 			);
-			path = Favorites;
+			path = FavoriteParkings;
 			sourceTree = "<group>";
 		};
 		E47090C12D230217005C3F43 /* ReservationsHistory */ = {
 			isa = PBXGroup;
 			children = (
-				E4C4CC762D29A78E004EA2FF /* ReservationsHistoryViewModel.swift */,
 				E4C4CC782D29A799004EA2FF /* ReservationsHistoryView.swift */,
+				E4C4CC762D29A78E004EA2FF /* ReservationsHistoryViewModel.swift */,
 				E4C4CC7A2D29A7B2004EA2FF /* ReservationsHistoryViewModelProtocol.swift */,
 			);
 			path = ReservationsHistory;
@@ -707,9 +720,11 @@
 			isa = PBXGroup;
 			children = (
 				E470913F2D23CCD1005C3F43 /* Enums */,
-				E4C4CC702D29A385004EA2FF /* Reservation */,
-				E470911A2D23ADF3005C3F43 /* ParkingDetails.swift */,
 				E470914C2D23F609005C3F43 /* GeoLocation.swift */,
+				E470911A2D23ADF3005C3F43 /* ParkingDetails.swift */,
+				E4C4CC712D29A3A3004EA2FF /* ParkingReservation.swift */,
+				E4C4CCBA2D2A6023004EA2FF /* FavoriteParking.swift */,
+				E4C4CCC22D2A66CC004EA2FF /* ParkingDetailsClass.swift */,
 			);
 			path = ParkingEnities;
 			sourceTree = "<group>";
@@ -806,7 +821,7 @@
 			children = (
 				E47090BB2D2301A5005C3F43 /* Home */,
 				E47090C12D230217005C3F43 /* ReservationsHistory */,
-				E47090C02D230208005C3F43 /* Favorites */,
+				E47090C02D230208005C3F43 /* FavoriteParkings */,
 				E47091492D23CE1D005C3F43 /* ParkingDetails */,
 				E47091472D23CE05005C3F43 /* ParkingCoordinator.swift */,
 			);
@@ -866,14 +881,6 @@
 				E4C4CC6E2D299F09004EA2FF /* ActiveSessionManagerProtocol.swift */,
 			);
 			path = ActiveSessionManager;
-			sourceTree = "<group>";
-		};
-		E4C4CC702D29A385004EA2FF /* Reservation */ = {
-			isa = PBXGroup;
-			children = (
-				E4C4CC712D29A3A3004EA2FF /* ParkingReservation.swift */,
-			);
-			path = Reservation;
 			sourceTree = "<group>";
 		};
 		E4C4CC732D29A4CF004EA2FF /* Persistence */ = {
@@ -1097,6 +1104,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E470914D2D23F609005C3F43 /* GeoLocation.swift in Sources */,
+				E4C4CCBF2D2A6278004EA2FF /* FavoriteParkingsViewModel.swift in Sources */,
 				E4C4CC612D29807D004EA2FF /* ParkingDetailsViewModelProtocol.swift in Sources */,
 				E42353042D26CA72003E28D8 /* MainView.swift in Sources */,
 				E47090D62D2303AF005C3F43 /* HTTPFields.swift in Sources */,
@@ -1108,6 +1116,8 @@
 				E47091142D23AC4C005C3F43 /* ParkingRepository.swift in Sources */,
 				E47090CD2D230346005C3F43 /* LocationManager.swift in Sources */,
 				E47090B82D230160005C3F43 /* ApplicationService.swift in Sources */,
+				E4C4CCC32D2A66CC004EA2FF /* ParkingDetailsClass.swift in Sources */,
+				E4C4CCBB2D2A6023004EA2FF /* FavoriteParking.swift in Sources */,
 				E4E2CDE02D253FDD00ABC583 /* ParkingSpotsMapViewModelProtocol.swift in Sources */,
 				E47091162D23AC57005C3F43 /* ParkingRepositoryProtocol.swift in Sources */,
 				E470914F2D23F63D005C3F43 /* GeoLocationStub.swift in Sources */,
@@ -1142,6 +1152,7 @@
 				E47091442D23CD52005C3F43 /* ParkingDetailsStub.swift in Sources */,
 				E47090AE2D2300D8005C3F43 /* AlertWrapperViewModelProtocol.swift in Sources */,
 				E47091122D23AAF2005C3F43 /* ParkingServiceProtocol.swift in Sources */,
+				E4C4CCC12D2A6280004EA2FF /* FavoriteParkingsViewModelProtocol.swift in Sources */,
 				E47090AC2D2300CD005C3F43 /* AlertWrapperViewModel.swift in Sources */,
 				E4E2CDD42D252F8100ABC583 /* WelcomeViewModelProtocol.swift in Sources */,
 				E47090BA2D230192005C3F43 /* ErrorHandlingViewModel.swift in Sources */,
@@ -1156,6 +1167,7 @@
 				E4C4CC5B2D2929F8004EA2FF /* TimeSlotsView.swift in Sources */,
 				E4C4CC572D2918FB004EA2FF /* URLOpenerSpy.swift in Sources */,
 				E4E2CDD22D252F7400ABC583 /* WelcomeViewModel.swift in Sources */,
+				E4C4CCBD2D2A626C004EA2FF /* FavoriteParkingsView.swift in Sources */,
 				E47090C32D2302BF005C3F43 /* AppComponent.swift in Sources */,
 				E47091202D23AFF8005C3F43 /* ErrorStub.swift in Sources */,
 				E4E2CDD92D253C4900ABC583 /* ParkingSpotsMapView.swift in Sources */,

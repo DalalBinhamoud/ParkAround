@@ -10,4 +10,5 @@ import Foundation
 protocol ParkingRepositoryProtocol {
     func fetchParkingSpots(userLocation: GeoLocation) async throws -> [ParkingDetails]
     func fetchReservationsHistory() async throws -> [ParkingReservation]
+    func fetchFavoriteParkings() async throws -> [FavoriteParking]
 }

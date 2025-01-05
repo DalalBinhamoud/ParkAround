@@ -50,9 +50,18 @@ struct ParkingDetailsView<ViewModel>: View where ViewModel: ParkingDetailsViewMo
 extension ParkingDetailsView {
    private var content: some View {
        Group {
-            Text(viewModel.parkingDetails.name)
-                .foregroundStyle(Colors.text)
-                .font(Fonts.heading)
+
+           HStack {
+               Text(viewModel.parkingDetails.name)
+                   .foregroundStyle(Colors.text)
+                   .font(Fonts.heading)
+
+               Button(action: {
+                   viewModel.addToFavorite()
+               }, label: {
+                   Text("Add to Favorite")
+               })
+           }
 
            Text(viewModel.parkingDetails.parkingStatus.rawValue)
 
@@ -96,6 +105,7 @@ extension ParkingDetailsView {
         var totalPrice = 10.0
         var isLoading = false
         var parkingDetails = ParkingDetails.StubFactory.make()
+        func addToFavorite() { }
         func processPayment() async { }
     }
     return ParkingDetailsView(viewModel: ViewModelFixture())

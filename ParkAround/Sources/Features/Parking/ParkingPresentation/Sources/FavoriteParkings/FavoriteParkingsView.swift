@@ -1,23 +1,18 @@
 //
-//  ReservationsHistoryView.swift
+//  FavoriteParkingsView.swift
 //  ParkAround
 //
-//  Created by Dalal Macbook on 04/01/2025.
+//  Created by Dalal Macbook on 05/01/2025.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
-struct ReservationsHistoryView<ViewModel>: View where ViewModel: ReservationsHistoryViewModelProtocol {
+struct FavoriteParkingsView<ViewModel>: View where ViewModel: FavoriteParkingsViewModelProtocol {
 
     // MARK: - Properties
-
     @Environment(\.modelContext) var context
-
-       @Query private var reservations: [ParkingReservation]
-    // MARK: - Init
-
-
+    @Query private var favoriteParkings: [FavoriteParking]
     @StateObject private var viewModel: ViewModel
 
     // MARK: - Init
@@ -26,12 +21,11 @@ struct ReservationsHistoryView<ViewModel>: View where ViewModel: ReservationsHis
         _viewModel = .init(wrappedValue: viewModel)
     }
 
-
     var body: some View {
         VStack {
-            Text("Reservations History")
-            ForEach(reservations) { reservation in
-                Text(reservation.address.description)
+            Text("Favorite Parking Locations")
+            ForEach(favoriteParkings) { favoriteParking in
+                Text(favoriteParking.parkingDetails.name)
             }
 
         }
@@ -45,13 +39,13 @@ struct ReservationsHistoryView<ViewModel>: View where ViewModel: ReservationsHis
 
 #Preview {
 
-    class ViewModelFixture: ReservationsHistoryViewModelProtocol {
-        var reservations: [ParkingReservation] = []
+    class ViewModelFixture: FavoriteParkingsViewModelProtocol {
+        var favoriteParkings: [FavoriteParking] = []
         var isLoading = false
         func onAppear() async {/* Preview */}
     }
 
-    return ReservationsHistoryView(
+    return FavoriteParkingsView(
         viewModel: ViewModelFixture()
     )
 }

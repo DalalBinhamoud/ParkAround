@@ -13,5 +13,7 @@ protocol ParkingDetailsViewModelProtocol: ObservableObject {
     var isLoading: Bool { get }
     var parkingDetails: ParkingDetails { get }
 
+    func addToFavorite()
     func processPayment() async
+
 }

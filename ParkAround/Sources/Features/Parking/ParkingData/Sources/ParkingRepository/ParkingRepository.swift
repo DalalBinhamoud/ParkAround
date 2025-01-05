@@ -14,11 +14,13 @@ final class ParkingRepository: ParkingRepositoryProtocol {
     // MARK: - Properties
     let parkingService: ParkingServiceProtocol
     @Query var reservations: [ParkingReservation]
+    @Query var favoriteParkings: [FavoriteParking]
 
     // MARK: - Init
     init(parkingService: ParkingServiceProtocol) {
         self.parkingService = parkingService
         _reservations = Query(sort: \.date, order: .reverse)
+        _favoriteParkings = Query(sort: \.date, order: .reverse)
     }
 
     func fetchParkingSpots(userLocation: GeoLocation) async throws -> [ParkingDetails] {
@@ -28,5 +30,9 @@ final class ParkingRepository: ParkingRepositoryProtocol {
 
     func fetchReservationsHistory() -> [ParkingReservation] {
         reservations
+    }
+
+    func fetchFavoriteParkings() -> [FavoriteParking] {
+        favoriteParkings
     }
 }

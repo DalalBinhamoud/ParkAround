@@ -23,6 +23,15 @@ struct HomeCoordinatorView: View {
         NavigationStack(path: $navigationPath) {
             VStack {
                 HStack {
+
+                    Button(action: {
+                        homeCoordinator.currentView = .favorites
+                        navigationPath.append(HomeRoute.favorites)
+                    }, label: {
+                        Text("Go to Favorite")
+                    })
+
+
                     Text("Header")
                     Button(action: {
                         homeCoordinator.currentView = .history
@@ -53,7 +62,9 @@ struct HomeCoordinatorView: View {
                             ReservationsHistoryViewModel(parkingRepository: homeCoordinator.parkingRepository)
                     )
                 case .favorites:
-                    Text("favorites")
+                    FavoriteParkingsView(
+                        viewModel: FavoriteParkingsViewModel(parkingRepository: homeCoordinator.parkingRepository)
+                    )
                 }
 
             }

@@ -14,7 +14,7 @@ class PersistenceController {
 
     init() {
         do {
-            container = try ModelContainer(for: ParkingReservation.self)
+            container = try ModelContainer(for: ParkingReservation.self, FavoriteParking.self, ParkingDetailsClass.self)
         } catch {
             fatalError("failed")
         }

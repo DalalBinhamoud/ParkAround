@@ -32,4 +32,11 @@ final class ParkingRepositorySpy: ParkingRepositoryProtocol {
         fetchReservationsHistoryCallsCount += 1
         return try await fetchReservationsHistoryTasks.value
     }
+
+    var fetchFavoriteParkingsTask = Task<[FavoriteParking],Error> { throw ErrorStub() }
+    var fetchFavoriteParkingsCallsCount = 0
+    func fetchFavoriteParkings() async throws -> [FavoriteParking] {
+        fetchFavoriteParkingsCallsCount += 1
+        return try await fetchFavoriteParkingsTask.value
+    }
 }

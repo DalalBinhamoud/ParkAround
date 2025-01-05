@@ -33,6 +33,7 @@ class ParkingDetailsViewModel: ParkingDetailsViewModelProtocol {
     }
 
 
+    // TODO: avoid breaking SRP
     // MARK: - Methods
     @MainActor
     func processPayment() async {
@@ -46,6 +47,21 @@ class ParkingDetailsViewModel: ParkingDetailsViewModelProtocol {
         } catch {
             // TODO: handle error
             isLoading = false
+        }
+    }
+
+    func addToFavorite() {
+        // TODO: map
+        let newParkingDetails = ParkingDetailsClass(
+            name: parkingDetails.name, rate: parkingDetails.rate, costPerHour: parkingDetails.costPerHour, availableSpots: parkingDetails.availableSpots, totalSpots: parkingDetails.totalSpots)
+        let newFavoriteLocation = FavoriteParking(parkingDetails: newParkingDetails)
+
+        context?.insert(newFavoriteLocation)
+
+        do {
+            try context?.save()
+        } catch {
+            fatalError("Failed to save the new data \(error)")
         }
     }
 
