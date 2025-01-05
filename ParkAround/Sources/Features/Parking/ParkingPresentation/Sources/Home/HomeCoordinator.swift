@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import SwiftUI
 
 class HomeCoordinator: ObservableObject {
     // MARK: - Properties
@@ -15,6 +16,7 @@ class HomeCoordinator: ObservableObject {
     @Published private(set) var parkingRepository: ParkingRepositoryProtocol
     @Published private(set) var paymentRepository: PaymentRepository
     private(set) var parkingService: ParkingServiceProtocol?
+    @Published var navigationPath = NavigationPath()
 
 
     // MARK: - Init
@@ -30,10 +32,12 @@ class HomeCoordinator: ObservableObject {
         self.paymentRepository = PaymentRepository()
     }
 
-    // MARK: - Methods
-    // TODO: navigation refactoring
-//    func navigateToParkingDetails(parkingDetails: ParkingDetails) {
-////        currentView = .parkingDetails(info: parkingDetails)
-//        currentView = .parkingDetails(info: parkingDetails)
-//    }
+    // TODO: decouple functionality and move to dedicated routing controlling class
+    func navigateTo(_ route: HomeRoute) {
+        currentView = route
+        if !navigationPath.isEmpty {
+            navigationPath.removeLast()
+        }
+        navigationPath.append(route)
+    }
 }

@@ -10,8 +10,8 @@ import SwiftUI
 struct HomeCoordinatorView: View {
     // MARK: - Properties
     @ObservedObject private var homeCoordinator: HomeCoordinator
-    @State var navigationPath = NavigationPath()
     @Environment(\.modelContext) private var modelContext
+    @State private var searchQuery = ""
 
     // MARK: - Init
     init(homeCoordinator: HomeCoordinator) {
@@ -20,7 +20,7 @@ struct HomeCoordinatorView: View {
 
     // MARK: - Body
     var body: some View {
-        NavigationStack(path: $navigationPath) {
+        NavigationStack(path: $homeCoordinator.navigationPath) {
             ZStack {
                 Colors.backgroundMedium
                     .ignoresSafeArea()
@@ -29,17 +29,16 @@ struct HomeCoordinatorView: View {
                     HStack {
                         
                         Button(action: {
-                            homeCoordinator.currentView = .favoriteParkings
-                            navigationPath.append(HomeRoute.favoriteParkings)
+                            homeCoordinator.navigateTo(HomeRoute.favoriteParkings)
                         }, label: {
                             Image(systemName: "heart.fill")
                         })
                         
-                        Spacer()
-                        
+                        ParkingSearchView(searchQuery: $searchQuery)
+                            .padding(.vertical)
+
                         Button(action: {
-                            homeCoordinator.currentView = .reservationHistory
-                            navigationPath.append(HomeRoute.reservationHistory)
+                            homeCoordinator.navigateTo(HomeRoute.reservationHistory)
                         }, label: {
                             Image("reservations-history", bundle: .main)
                                 .resizable()
@@ -50,6 +49,7 @@ struct HomeCoordinatorView: View {
                     
                     // MARK: - Map
                     ParkingSpotsMapView(
+                        searchQuery: $searchQuery,
                         viewModel: ParkingSpotsMapViewModel(
                             applicationService: homeCoordinator.applicationService,
                             parkingRepository: homeCoordinator.parkingRepository,

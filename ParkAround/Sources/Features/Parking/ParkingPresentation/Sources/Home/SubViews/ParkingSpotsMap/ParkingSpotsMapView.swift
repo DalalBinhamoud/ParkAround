@@ -15,7 +15,7 @@ struct ParkingSpotsMapView<ViewModel>: View where ViewModel: ParkingSpotsMapView
     @ObservedObject private var viewModel: ViewModel
     @State private var isSheetPresented = false
     @State private var navigateToDetails = false
-    @State private var searchQuery = ""
+    @Binding private var searchQuery: String
     @State private var selectedParking: ParkingDetails?
 
     @State private var networkMonitor = NetworkMonitor()
@@ -26,7 +26,11 @@ struct ParkingSpotsMapView<ViewModel>: View where ViewModel: ParkingSpotsMapView
     @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
 
     // MARK: - Init
-    init(viewModel: ViewModel) {
+    init(
+        searchQuery: Binding<String>,
+        viewModel: ViewModel
+    ) {
+        _searchQuery = searchQuery
         _viewModel = .init(wrappedValue: viewModel)
     }
 
@@ -38,7 +42,6 @@ struct ParkingSpotsMapView<ViewModel>: View where ViewModel: ParkingSpotsMapView
                     .ignoresSafeArea()
 
                 VStack {
-                    ParkingSearchView(searchQuery: $searchQuery)
                     mapContent
                 }
 
@@ -146,6 +149,6 @@ private enum Constants {
     }
 
     return ParkingSpotsMapView(
-        viewModel: ViewModelFixture()
+        searchQuery: .constant(""), viewModel: ViewModelFixture()
     )
 }

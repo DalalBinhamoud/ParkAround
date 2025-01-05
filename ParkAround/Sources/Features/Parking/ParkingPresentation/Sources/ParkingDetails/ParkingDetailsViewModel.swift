@@ -77,7 +77,7 @@ class ParkingDetailsViewModel: ParkingDetailsViewModelProtocol {
     func getRateIcon() -> String {
         switch parkingDetails.rate {
         case 5:
-            return "start.fill"
+            return "star.fill"
         case 3..<5:
             return "star.leadinghalf.filled"
         default:
