@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import SwiftData
 
 protocol ParkingSpotsMapViewModelProtocol: ObservableObject {
     var isLoading: Bool { get }
     var parkingSpots: [ParkingDetails] { get }
     var paymentRepository: PaymentRepositoryProtocol { get }
+    var modelContext: ModelContext? {get }
 
     func onAppear() async
 

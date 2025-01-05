@@ -13,6 +13,7 @@ extension ParkingDetails {
             id: Int = 1,
             name: String = "Test Parking Spot Name",
             rate: Double = 4.0,
+            costPerHour: Double = 10.0,
             address: GeoLocation = GeoLocation.StubFactory.make(),
             availableSpots: Int = 12,
             totalSpots: Int = 30
@@ -20,7 +21,8 @@ extension ParkingDetails {
             ParkingDetails(
                 id: id,
                 name: name,
-                rate: rate,
+                rate: rate, 
+                costPerHour: costPerHour,
                 address: address,
                 availableSpots: availableSpots,
                 totalSpots: totalSpots)

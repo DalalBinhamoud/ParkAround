@@ -16,6 +16,7 @@ public struct ParkingDetailsDTO: Decodable, Equatable, Sendable {
         case latitude
         case longitude
         case rate = "rate_per_hour"
+        case costPerHour = "cost_per_hour"
         case availableSpots = "available_spots"
         case totalSpots = "total_spots"
     }
@@ -23,16 +24,18 @@ public struct ParkingDetailsDTO: Decodable, Equatable, Sendable {
     let id: Int
     let name: String
     let rate: Double
+    let costPerHour: Double
     let latitude: Double
     let longitude: Double
     let availableSpots: Int
     let totalSpots: Int
 
     // MARK: - Init
-    init(id: Int, name: String, rate: Double, latitude: Double, longitude: Double, availableSpots: Int, totalSpots: Int) {
+    init(id: Int, name: String, rate: Double, costPerHour: Double, latitude: Double, longitude: Double, availableSpots: Int, totalSpots: Int) {
         self.id = id
         self.name = name
         self.rate = rate
+        self.costPerHour = costPerHour
         self.latitude = latitude
         self.longitude = longitude
         self.availableSpots = availableSpots

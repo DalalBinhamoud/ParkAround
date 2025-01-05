@@ -9,7 +9,7 @@ import Foundation
 
 protocol ParkingDetailsViewModelProtocol: ObservableObject {
     var selectedTime: Int { get set }
-    var totalPrice: Int { get }
+    var totalPrice: Double { get }
     var isLoading: Bool { get }
     var parkingDetails: ParkingDetails { get }
 

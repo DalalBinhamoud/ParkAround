@@ -13,6 +13,7 @@ extension ParkingDetailsDTO {
             id: Int = 1,
             name: String = "Test Parking Spot Name",
             rate: Double = 4.0,
+            costPerHour: Double = 10.0,
             latitude: Double = 24000,
             longitude: Double = 46000,
             availableSpots: Int = 12,
@@ -21,7 +22,8 @@ extension ParkingDetailsDTO {
             ParkingDetailsDTO(
                 id: id,
                 name: name,
-                rate: rate,
+                rate: rate, 
+                costPerHour: costPerHour,
                 latitude: latitude,
                 longitude: longitude,
                 availableSpots: availableSpots,

@@ -7,6 +7,7 @@
 
 import Foundation
 import MapKit
+import SwiftData
 
 class ParkingSpotsMapViewModel: ParkingSpotsMapViewModelProtocol {
 
@@ -16,16 +17,22 @@ class ParkingSpotsMapViewModel: ParkingSpotsMapViewModelProtocol {
     let applicationService: ApplicationService
     let parkingRepository: ParkingRepositoryProtocol
     let paymentRepository: PaymentRepositoryProtocol
+    var modelContext: ModelContext?
+//    private let onNavigate: (_ parkingDetails: ParkingDetails) -> Void
 
     // MARK: - Init
     init(
         applicationService: ApplicationService,
         parkingRepository: ParkingRepositoryProtocol,
-        paymentRepository: PaymentRepositoryProtocol
+        paymentRepository: PaymentRepositoryProtocol,
+        modelContext: ModelContext? = nil
+//        onNavigate: @escaping (_ parkingDetails: ParkingDetails) -> Void
     ) {
         self.applicationService = applicationService
         self.parkingRepository = parkingRepository
         self.paymentRepository = paymentRepository
+        self.modelContext = modelContext
+//        self.onNavigate = onNavigate
     }
 
     // MARK: - Methods
@@ -39,4 +46,8 @@ class ParkingSpotsMapViewModel: ParkingSpotsMapViewModelProtocol {
             isLoading = true
         }
     }
+
+//    func navigateToDisplayDetails(for parkingDetails: ParkingDetails) {
+//        onNavigate(parkingDetails)
+//    }
 }

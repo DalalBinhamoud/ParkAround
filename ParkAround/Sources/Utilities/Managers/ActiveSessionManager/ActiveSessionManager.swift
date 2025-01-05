@@ -1,15 +1,15 @@
 //
-//  ActiveSessionViewModel.swift
+//  ActiveSessionManager.swift
 //  ParkAround
 //
-//  Created by Dalal Macbook on 01/01/2025.
+//  Created by Dalal Macbook on 04/01/2025.
 //
 
 import BackgroundTasks
 import Foundation
 
 // TOOD: confirm to protocol
-class ActiveSessionViewModel: ObservableObject {
+class ActiveSessionManager: ObservableObject, ActiveSessionManagerProtocol {
 
     // MARK: - Properties
     @Published var isActive = false
@@ -70,7 +70,7 @@ class ActiveSessionViewModel: ObservableObject {
     // the session should be tracked even if the app state in background
     func scheduleBackgroundTask() {
         let request = BGAppRefreshTaskRequest(identifier: "com.AppAround")
-        request.earliestBeginDate = Date().addingTimeInterval(30) // check every 5 minutes
+        request.earliestBeginDate = Date().addingTimeInterval(5 * 60) // check every 5 minutes
 
         do {
             try BGTaskScheduler.shared.submit(request)
