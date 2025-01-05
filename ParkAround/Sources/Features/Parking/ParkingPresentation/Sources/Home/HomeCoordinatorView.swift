@@ -22,25 +22,30 @@ struct HomeCoordinatorView: View {
     var body: some View {
         NavigationStack(path: $navigationPath) {
             VStack {
+                // MARK: - Header
                 HStack {
 
                     Button(action: {
-                        homeCoordinator.currentView = .favorites
-                        navigationPath.append(HomeRoute.favorites)
+                        homeCoordinator.currentView = .favoriteParkings
+                        navigationPath.append(HomeRoute.favoriteParkings)
                     }, label: {
-                        Text("Go to Favorite")
+                        Image(systemName: "heart.fill")
                     })
 
+                    Spacer()
 
-                    Text("Header")
                     Button(action: {
-                        homeCoordinator.currentView = .history
-                        navigationPath.append(HomeRoute.history)
+                        homeCoordinator.currentView = .reservationHistory
+                        navigationPath.append(HomeRoute.reservationHistory)
                     }, label: {
-                        Text("Go to history")
+                        Image("reservations-history", bundle: .main)
+                            .resizable()
+                            .frame(width: IconSize.small, height: IconSize.small)
                     })
                 }
+                .padding(.horizontal)
 
+                // MARK: - Map
                 ParkingSpotsMapView(
                     viewModel: ParkingSpotsMapViewModel(
                         applicationService: homeCoordinator.applicationService,
@@ -53,15 +58,15 @@ struct HomeCoordinatorView: View {
             .navigationDestination(for: HomeRoute.self) { route in
                 switch route {
                 case .parkings:
-                    Text("parkings")
+                    EmptyView()
                 case .parkingDetails(let info):
                     Text("\(info.name)")
-                case .history:
+                case .reservationHistory:
                     ReservationsHistoryView(
                         viewModel:
                             ReservationsHistoryViewModel(parkingRepository: homeCoordinator.parkingRepository)
                     )
-                case .favorites:
+                case .favoriteParkings:
                     FavoriteParkingsView(
                         viewModel: FavoriteParkingsViewModel(parkingRepository: homeCoordinator.parkingRepository)
                     )
@@ -71,8 +76,3 @@ struct HomeCoordinatorView: View {
         }
     }
 }
-
-// TODO: Add Fixture
-//#Preview {
-//    HomeCoordinatorView()
-//}

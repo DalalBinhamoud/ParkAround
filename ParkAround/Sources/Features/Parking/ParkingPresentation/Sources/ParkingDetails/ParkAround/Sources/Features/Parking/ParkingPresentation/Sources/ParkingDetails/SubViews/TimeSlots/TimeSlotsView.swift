@@ -34,7 +34,7 @@ extension TimeSlotsView {
         ScrollView(.horizontal) {
             HStack {
                 ForEach(1..<7) { time in
-                    InlineButton(label: "\(time) Hour",
+                    InlineButton(label: "\(time) \(time == 1 ? "Hour" : "Hours")",
                                  background: selectedTime == time ? Colors.secondary : Colors.primary,
                                  action: {
                         selectedTime = time

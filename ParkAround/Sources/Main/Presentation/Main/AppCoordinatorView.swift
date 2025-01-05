@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct AppCoordinatorView: View {
+
     // MARK: - Properties
     @ObservedObject private var appCoordinator = AppCoordinator()
     @Environment(\.modelContext) var context
-
 
     // MARK: - Body
     var body: some View {

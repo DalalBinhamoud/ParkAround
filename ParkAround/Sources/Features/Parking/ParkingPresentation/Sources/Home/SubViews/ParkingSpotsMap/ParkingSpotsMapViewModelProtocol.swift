@@ -15,9 +15,9 @@ protocol ParkingSpotsMapViewModelProtocol: ObservableObject {
     var modelContext: ModelContext? {get }
 
     func onAppear() async
+    func getParkingMarker(for status: ParkingStatus) -> String
 
 }
-
 
 extension ParkingSpotsMapViewModelProtocol {
     func getFilteredSpots(for query: String) -> [ParkingDetails] {

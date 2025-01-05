@@ -15,10 +15,10 @@ struct ParkingSpotsMapView<ViewModel>: View where ViewModel: ParkingSpotsMapView
     @ObservedObject private var viewModel: ViewModel
     @State private var navigateToDetails = false
     @State private var searchQuery = ""
-    @State private var selectedSpot: ParkingDetails?
+    @State private var selectedParking: ParkingDetails?
 
-    // MARK: - Mam Config
-//    private let RiyadhRegion = CLLocationCoordinate2D(latitude: 24.774265, longitude: 46.738586)
+    // MARK: - Map Config
+    //    private let RiyadhRegion = CLLocationCoordinate2D(latitude: 24.774265, longitude: 46.738586)
     private let RiyadhRegion = CLLocationCoordinate2D(latitude: 24.7519539, longitude: 46.6421894)
     @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
 
@@ -32,22 +32,22 @@ struct ParkingSpotsMapView<ViewModel>: View where ViewModel: ParkingSpotsMapView
         NavigationStack{
             ZStack {
                 VStack {
-                    ParkingSearchView(searchQurey: $searchQuery)
-                    if viewModel.isLoading {
-                        ProgressView()
-                    } else {
-                        mapContent
-                    }
+                    ParkingSearchView(searchQuery: $searchQuery)
+                    mapContent
+                }
+
+                if viewModel.isLoading {
+                    LoadingOverlay()
                 }
             }
             .navigationDestination(isPresented: $navigateToDetails) {
                 // TODO: handle optional
                 ParkingDetailsView(
-                   viewModel: ParkingDetailsViewModel(
-                    parkingDetails: selectedSpot ?? ParkingDetails.StubFactory.make(),
-                    paymentRepository: viewModel.paymentRepository,
-                    context: viewModel.modelContext ?? nil
-                   )
+                    viewModel: ParkingDetailsViewModel(
+                        parkingDetails: selectedParking ?? ParkingDetails.StubFactory.make(),
+                        paymentRepository: viewModel.paymentRepository,
+                        context: viewModel.modelContext ?? nil
+                    )
                 )
             }
         }
@@ -71,65 +71,46 @@ extension ParkingSpotsMapView {
                 ForEach(filteredSpots) { parkingDetails in
                     Annotation(parkingDetails.name, coordinate: parkingDetails.coordinate) {
                         Button(action: {
-                            selectedSpot = parkingDetails
+                            selectedParking = parkingDetails
                         }, label: {
-                            Image(systemName: "bolt.car.circle.fill")
+                            Image(viewModel.getParkingMarker(for: parkingDetails.parkingStatus), bundle: .main)
                                 .resizable()
                                 .frame(width: Constants.iconSize, height: Constants.iconSize) // TODO: scale
                         })
                     }
                 }
-        }
-        .sheet(item: $selectedSpot) { spot in
-            getSheetContent(spot: spot)
+            }
+            .sheet(item: $selectedParking) { spot in
+                ParkingDetailsSheetView(details: spot) {
+                    withAnimation {
+                        navigateToDetails = true
+                        selectedParking = nil // dismiss sheet
+                    }
+                }
                 .presentationDetents([.height(Constants.sheetHight), .medium])
                 .presentationDragIndicator(.visible)
 
-        }
-            Button(action: {
-                withAnimation {
-                    position = .userLocation(fallback: position.fallbackPosition ?? position)
-                }
-            }, label: {
-                Image(systemName: "location.circle")
-                    .resizable()
-                    .frame(width: Constants.userLocationIcon , height: Constants.userLocationIcon)
-            })
-            .padding(Spacing.medium)
+            }
+            userLocationButton
         }
     }
 
-    private func getSheetContent(spot: ParkingDetails) -> some View {
-
-        HStack(alignment: .bottom) {
-            VStack(alignment: .leading) {
-                Text("name: \(spot.name)")
-                Text("Rate: \(spot.rate, specifier: "%.2f")")
-                Text("available Spots: \(spot.availableSpots)")
+    @ViewBuilder private var userLocationButton: some View {
+        Button(action: {
+            withAnimation {
+                position = .userLocation(fallback: position.fallbackPosition ?? position)
             }
-
-            Spacer()
-
-            VStack(spacing: Spacing.large) {
-
-                Text(spot.parkingStatus.rawValue)
-
-                Button(action: {
-                    withAnimation {
-                        navigateToDetails = true
-                        selectedSpot = nil // dismiss sheet
-                    }
-                }, label: {
-                    Text("Select & Pay")
-                })
-            }
-        }
-        .padding(.horizontal, Spacing.large)
+        }, label: {
+            Image(systemName: "location.circle")
+                .resizable()
+                .frame(width: Constants.userLocationIcon , height: Constants.userLocationIcon)
+        })
+        .padding(Spacing.medium)
     }
 }
 
 private enum Constants {
-    static let sheetHight: CGFloat = 150
+    static let sheetHight: CGFloat = 200 // TODO: read geometry
     static let iconSize: CGFloat = 50
     static let userLocationIcon: CGFloat = 60
 }
@@ -143,7 +124,8 @@ private enum Constants {
             ParkingDetails(id: 2, name: "parking 2", rate: 4.5, costPerHour: 30.0,address: GeoLocation(latitude: 24.7519636, longitude: 46.642228), availableSpots: 45, totalSpots: 50)
         ]
         var paymentRepository: PaymentRepositoryProtocol = PaymentRepository()
-        func onAppear() { }
+        func onAppear() { /*Preview*/ }
+        func getParkingMarker(for status: ParkingStatus) -> String { return "park-marker-available" }
     }
 
     return ParkingSpotsMapView(

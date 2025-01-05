@@ -65,6 +65,17 @@ class ParkingDetailsViewModel: ParkingDetailsViewModelProtocol {
         }
     }
 
+    func getRateIcon() -> String {
+        switch parkingDetails.rate {
+        case 5:
+            return "start.fill"
+        case 3..<5:
+            return "star.leadinghalf.filled"
+        default:
+            return "star"
+        }
+    }
+
     private func addReservation() {
             let newReservation = ParkingReservation(address: parkingDetails.address, cost: totalPrice, date: Date(), duration: selectedTime * 60)
             context?.insert(newReservation)

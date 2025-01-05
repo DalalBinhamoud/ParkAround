@@ -14,6 +14,7 @@ protocol ParkingDetailsViewModelProtocol: ObservableObject {
     var parkingDetails: ParkingDetails { get }
 
     func addToFavorite()
+    func getRateIcon() -> String
     func processPayment() async
 
 }

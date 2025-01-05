@@ -12,7 +12,6 @@ struct WelcomeView<ViewModel> : View where ViewModel: WelcomeViewModelProtocol {
     // MARK: - Properties
     @ObservedObject private var viewModel: ViewModel
 
-
     // MARK: - Init
     init(viewModel: ViewModel) {
         _viewModel = .init(wrappedValue: viewModel)
@@ -26,8 +25,6 @@ struct WelcomeView<ViewModel> : View where ViewModel: WelcomeViewModelProtocol {
                 .ignoresSafeArea()
 
             VStack(spacing: Spacing.large) {
-                Spacer()
-
                 Image("logo", bundle: .main)
                     .resizable()
                     .scaledToFit()
@@ -50,10 +47,10 @@ struct WelcomeView<ViewModel> : View where ViewModel: WelcomeViewModelProtocol {
 }
 
 #Preview {
-    class ViewModelfixture: WelcomeViewModelProtocol {
+    class ViewModelFixture: WelcomeViewModelProtocol {
         var onContinue = { }
     }
     return WelcomeView(
-        viewModel: ViewModelfixture()
+        viewModel: ViewModelFixture()
     )
 }

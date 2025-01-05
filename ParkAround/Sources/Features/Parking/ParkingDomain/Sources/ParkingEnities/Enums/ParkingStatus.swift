@@ -6,9 +6,24 @@
 //
 
 import Foundation
+import SwiftUI
 
 enum ParkingStatus: String {
     case available = "Available"
     case busy = "Busy"
-    case veryBusy = "Very busy" // no available spot
+    case occupied = "Occupied" // no available spot
+}
+
+
+extension ParkingStatus {
+    var backgroundColor: Color {
+        switch self {
+        case .available:
+            Colors.success
+        case .busy:
+            Colors.warning
+        case .occupied:
+            Colors.failure
+        }
+    }
 }

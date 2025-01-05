@@ -17,7 +17,6 @@ class AppCoordinator: ObservableObject {
     private(set) var apiService = AppComponent.apiService
     private(set) var parkingService: ParkingServiceProtocol
 
-
     init() {
         self.parkingService = ParkingService(serviceProvider: AppComponent.apiService)
     }

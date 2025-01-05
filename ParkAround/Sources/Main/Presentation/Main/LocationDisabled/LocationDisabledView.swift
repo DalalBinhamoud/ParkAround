@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct LocationDisabledView: View {
+
     // MARK: - Properties
     private let urlOpener: URLOpener = UIApplication.shared
 
     // MARK: - Body
     var body: some View {
         ZStack {
-            Colors.background
+            Colors.backgroundMedium
                 .ignoresSafeArea()
             content
                 .padding(Spacing.large)
@@ -24,33 +25,29 @@ struct LocationDisabledView: View {
 
 extension LocationDisabledView {
     @ViewBuilder private var content: some View {
-        VStack(alignment: .leading, spacing: Spacing.large) {
-            Spacer()
+        VStack(alignment: .center, spacing: Spacing.medium) {
             Image("location-permission", bundle: .main)
                 .resizable()
                 .scaledToFit()
+                .frame(width: IconSize.large, height: IconSize.large)
+                .padding(.top, Spacing.giant)
 
-            Text("(Park Around) needs your location to provide you with nearby parking spots around your current location")
+            Text("Enable Location Services")
                 .foregroundStyle(Colors.text)
-                .font(Fonts.subheading)
+                .font(Fonts.heading)
 
-            Text("Go to Settings and then" )
+            Text(getRichDescription(of: "Park Around needs your location to provide you with nearby parking spots around your current location.", highlightedText: "Park Around"))
+                .lineSpacing(Spacing.tiny)
                 .foregroundStyle(Colors.text)
                 .font(Fonts.body)
 
-            makeRow(imageName: "location.square.fill", title: "Select Location")
-            makeRow(imageName: "checkmark.square", title: "Tap Always or While using")
-
+            Spacer()
             openSettings
-
-            Spacer()
-            Spacer()
-
         }
     }
 
     private var openSettings: some View {
-        PrimaryButton(label: "Settings", action: {
+        PrimaryButton(label: "Enable Location", action: {
             if let url = URL(string: UIApplication.openSettingsURLString) {
                 if urlOpener.canOpen(url) {
                     urlOpener.open(url, options: [:])
@@ -59,25 +56,15 @@ extension LocationDisabledView {
         })
     }
 
-    private func makeRow(imageName: String, title: String) -> some View {
-        HStack(spacing: Spacing.small) {
-            Image(systemName: imageName)
-                .resizable()
-                .frame(width: Constants.imageSize, height: Constants.imageSize)
-                .foregroundStyle(.blue)
+    private func getRichDescription(of text: String, highlightedText: String) -> AttributedString {
+        var attributedString = AttributedString(text)
 
-            Text(title)
-                .foregroundStyle(Colors.text)
-                .font(Fonts.body)
+        if let range = attributedString.range(of: highlightedText) {
+            attributedString[range].font = Fonts.subheading
         }
+        return attributedString
     }
 
-}
-
-extension LocationDisabledView {
-    private enum Constants {
-        static let imageSize: CGFloat = 24
-    }
 }
 
 #Preview {

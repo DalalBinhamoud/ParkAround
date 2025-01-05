@@ -23,17 +23,64 @@ struct FavoriteParkingsView<ViewModel>: View where ViewModel: FavoriteParkingsVi
 
     var body: some View {
         VStack {
-            Text("Favorite Parking Locations")
-            ForEach(favoriteParkings) { favoriteParking in
-                Text(favoriteParking.parkingDetails.name)
+            if favoriteParkings.count == 0 {
+                Spacer()
+                emptyList
+                Spacer()
+            } else {
+                ScrollView {
+                    ForEach(favoriteParkings) { favoriteParking in
+                        favoriteParkingCard(favoriteParking: favoriteParking)
+                    }
+                }
             }
 
         }
+        .navigationTitle("Favorite Parking Locations")
         .onAppear {
             Task {
                 await viewModel.onAppear()
             }
         }
+    }
+}
+
+extension FavoriteParkingsView {
+    @ViewBuilder private var emptyList: some View {
+        VStack(spacing: Spacing.medium) {
+            Image(systemName: "heart.slash")
+                .resizable()
+                .scaledToFit()
+                .frame(width: IconSize.large, height: IconSize.large)
+
+            Text("No Favorite Parkings")
+                .foregroundStyle(Colors.text)
+                .font(Fonts.subheading)
+
+            Text("You can add favorite parking spot by clicking hear icon")
+                .foregroundStyle(Colors.text)
+                .lineSpacing(Spacing.small)
+                .multilineTextAlignment(.center)
+                .font(Fonts.body)
+        }
+    }
+
+   private func favoriteParkingCard(favoriteParking: FavoriteParking) -> some View {
+       VStack(alignment: .leading) {
+            MakeRow(imageName: "calendar", title: favoriteParking.date.formatted(date: .abbreviated, time: .shortened))
+
+           Divider()
+               .frame(height: 2)
+               .background(Colors.text)
+
+           MakeRow(imageName: "mappin.and.ellipse", title: favoriteParking.parkingDetails.name)
+           MakeRow(imageName: "dollarsign.circle", title: "\(favoriteParking.parkingDetails.costPerHour)")
+        }
+       .padding()
+//       .frame(maxWidth: .infinity)
+       .background(Colors.primary)
+       .cornerRadius(CornerRadius.large)
+       .shadow(radius: 3)
     }
 }
 

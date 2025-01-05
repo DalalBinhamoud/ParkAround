@@ -18,7 +18,7 @@ struct MainView: View {
         ZStack {
             if isActive {
                 if locationManager.isLocationEnabled {
-                    AppCoordinatorView()
+                        AppCoordinatorView()
                 } else {
                     LocationDisabledView()
                 }
@@ -29,7 +29,7 @@ struct MainView: View {
         }
         .onAppear {
             Task {
-                try await Task.sleep(for: .seconds(3))
+                try await Task.sleep(for: .seconds(3)) // hide splash screen after 2 seconds
                 withAnimation {
                     isActive = true
                 }

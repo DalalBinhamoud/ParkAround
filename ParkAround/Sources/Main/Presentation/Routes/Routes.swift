@@ -17,8 +17,8 @@ enum Route {
 enum HomeRoute: Hashable {
     case parkings
     case parkingDetails(info: ParkingDetails)
-    case favorites
-    case history
+    case favoriteParkings
+    case reservationHistory
 }
 
 enum ParkingRoute {

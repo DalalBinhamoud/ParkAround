@@ -47,6 +47,18 @@ class ParkingSpotsMapViewModel: ParkingSpotsMapViewModelProtocol {
         }
     }
 
+    // custom marker based on parking spots availability
+    func getParkingMarker(for status: ParkingStatus) -> String {
+        switch status {
+        case .available:
+            return "park-marker-available"
+        case .busy:
+            return "park-marker-busy"
+        case .occupied:
+            return "park-marker-occupied"
+        }
+    }
+
 //    func navigateToDisplayDetails(for parkingDetails: ParkingDetails) {
 //        onNavigate(parkingDetails)
 //    }

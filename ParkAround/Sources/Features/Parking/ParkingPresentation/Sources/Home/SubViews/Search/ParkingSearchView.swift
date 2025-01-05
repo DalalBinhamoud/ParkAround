@@ -9,18 +9,18 @@ import SwiftUI
 
 // TODO: create a generic search View
 struct ParkingSearchView: View {
-    @Binding var searchQurey: String
+    @Binding var searchQuery: String
 
     var body: some View {
         HStack {
-            TextField("Search for parking name and address", text: $searchQurey)
+            TextField("Search for parking name and address", text: $searchQuery)
                 .padding(Spacing.small)
                 .background(Colors.background)
                 .cornerRadius(CornerRadius.small)
 
-            if !searchQurey.isEmpty {
+            if !searchQuery.isEmpty {
                 Button(action: {
-                    searchQurey = ""
+                    searchQuery = ""
                 }, label: {
                     Image(systemName: "xmark.circle.fill")
                         .foregroundStyle(Colors.background)
@@ -32,5 +32,5 @@ struct ParkingSearchView: View {
 }
 
 #Preview {
-    ParkingSearchView(searchQurey: .constant(""))
+    ParkingSearchView(searchQuery: .constant(""))
 }
