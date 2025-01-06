@@ -23,7 +23,6 @@
 
 **Mocked Location**: A simulated user current location is shown to display nearby parking spots that included in the JSON file.
 
-**Actual User Location**: Press the below button on the map to get and display the user's real location.
 ## Usage
 
 In order to use the app, you must grant location access permission.
@@ -42,7 +41,7 @@ In order to use the app, you must grant location access permission.
 
 - **Real nearby Parking Spots:** Display real response of nearby parking spots based on user location within a  radius (e.g., 5 km).
 
-- **Multiple Active Reservations:** Support multiple active parking sessions for users with more than one car, linking reservations to specific vehicle identifiers.
+- **Multiple Active Reservations:** Support multiple active parking sessions for users with more than one car, linking reservations to specific vehicle identifiers. Also, enhance tracking of sessions in when app is in background
 
 - **Favorite Parking Spots:** Enable users to save and quickly access favorite parking locations.
 

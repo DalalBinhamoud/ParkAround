@@ -31,6 +31,7 @@ extension AppCoordinatorView {
                 homeCoordinator: HomeCoordinator(
                     currentView: homeRoute,
                     applicationService: appCoordinator.applicationService,
+                    sessionManager: appCoordinator.sessionManager,
                     parkingService: appCoordinator.parkingService,
                     context: context
                 ))

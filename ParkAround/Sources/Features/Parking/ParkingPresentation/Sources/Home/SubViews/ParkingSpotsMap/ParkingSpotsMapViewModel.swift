@@ -17,22 +17,22 @@ class ParkingSpotsMapViewModel: ParkingSpotsMapViewModelProtocol {
     let applicationService: ApplicationServiceProtocol
     let parkingRepository: ParkingRepositoryProtocol
     let paymentRepository: PaymentRepositoryProtocol
+    var sessionManager: ActiveSessionManagerProtocol
     var modelContext: ModelContext?
-//    private let onNavigate: (_ parkingDetails: ParkingDetails) -> Void
 
     // MARK: - Init
     init(
         applicationService: ApplicationServiceProtocol,
         parkingRepository: ParkingRepositoryProtocol,
         paymentRepository: PaymentRepositoryProtocol,
+        sessionManager: ActiveSessionManagerProtocol,
         modelContext: ModelContext? = nil
-//        onNavigate: @escaping (_ parkingDetails: ParkingDetails) -> Void
     ) {
         self.applicationService = applicationService
         self.parkingRepository = parkingRepository
         self.paymentRepository = paymentRepository
+        self.sessionManager = sessionManager
         self.modelContext = modelContext
-//        self.onNavigate = onNavigate
     }
 
     // MARK: - Methods

@@ -15,6 +15,9 @@ class ActiveSessionManager: ObservableObject, ActiveSessionManagerProtocol {
     @Published var isActive = false
     @Published var remainingTime: TimeInterval?
 
+    var remainingTimePublisher: Published<TimeInterval?>.Publisher { $remainingTime }
+    var isActivePublisher: Published<Bool>.Publisher { $isActive }
+
     // private
     private let timerManager = TimerManager()
     private let notificationManager = NotificationManager()

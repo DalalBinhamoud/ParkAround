@@ -23,6 +23,8 @@ struct ReservationsHistoryView<ViewModel>: View where ViewModel: ReservationsHis
     // MARK: - Body
     var body: some View {
         ZStack(alignment: .topLeading) {
+            Colors.background
+                .ignoresSafeArea()
             VStack {
                 if reservations.count == 0 {
                     Spacer()
@@ -71,22 +73,22 @@ extension ReservationsHistoryView {
         .padding()
     }
 
-   private func reservationCard(reservation: ParkingReservation) -> some View {
-       VStack(alignment: .leading) {
+    private func reservationCard(reservation: ParkingReservation) -> some View {
+        VStack(alignment: .leading) {
             MakeRow(imageName: "calendar", title: reservation.date.formatted(date: .abbreviated, time: .shortened))
 
-           Divider()
-               .frame(height: 2)
-               .background(Colors.text)
+            Divider()
+                .frame(height: 2)
+                .background(Colors.text)
 
             MakeRow(imageName: "mappin.and.ellipse", title: reservation.address.description)
             MakeRow(imageName: "dollarsign.circle", title: "\(reservation.cost)")
         }
-       .foregroundStyle(.white)
-       .padding()
-       .background(Colors.primary)
-       .cornerRadius(CornerRadius.large)
-       .shadow(radius: 3)
+        .foregroundStyle(.white)
+        .padding()
+        .background(Colors.primary)
+        .cornerRadius(CornerRadius.large)
+        .shadow(radius: 3)
     }
 }
 

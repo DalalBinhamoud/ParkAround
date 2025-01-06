@@ -13,6 +13,7 @@ class HomeCoordinator: ObservableObject {
     // MARK: - Properties
     @Published var currentView: HomeRoute
     @Published private(set) var applicationService: ApplicationService
+    @Published private(set) var  sessionManager: ActiveSessionManagerProtocol
     @Published private(set) var parkingRepository: ParkingRepositoryProtocol
     @Published private(set) var paymentRepository: PaymentRepository
     private(set) var parkingService: ParkingServiceProtocol?
@@ -23,11 +24,13 @@ class HomeCoordinator: ObservableObject {
     init(
         currentView: HomeRoute,
         applicationService: ApplicationService,
+        sessionManager: ActiveSessionManagerProtocol,
         parkingService: ParkingServiceProtocol,
         context: ModelContext
     ) {
         self.currentView = currentView
         self.applicationService = applicationService
+        self.sessionManager = sessionManager
         self.parkingRepository = ParkingRepository(
             parkingService: parkingService,
             context: context

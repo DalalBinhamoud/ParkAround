@@ -72,6 +72,9 @@
 		E4807A892D2AF5C900FA2CC2 /* PaymentRepositorySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4807A882D2AF5C900FA2CC2 /* PaymentRepositorySpy.swift */; };
 		E4807A8D2D2AFE2300FA2CC2 /* ParkingDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4807A8C2D2AFE2300FA2CC2 /* ParkingDetailsViewModelTests.swift */; };
 		E4807A8F2D2B1B1600FA2CC2 /* WelcomeViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4807A8E2D2B1B1600FA2CC2 /* WelcomeViewUITests.swift */; };
+		E48BC34B2D2BC6B700AA3F0B /* RemainingTimeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BC34A2D2BC6B700AA3F0B /* RemainingTimeViewModel.swift */; };
+		E48BC34D2D2BC6BF00AA3F0B /* RemainingTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BC34C2D2BC6BF00AA3F0B /* RemainingTimeView.swift */; };
+		E48BC3512D2BC87A00AA3F0B /* RemainingTimeViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E48BC3502D2BC87A00AA3F0B /* RemainingTimeViewModelProtocol.swift */; };
 		E4C4CC572D2918FB004EA2FF /* URLOpenerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC562D2918FB004EA2FF /* URLOpenerSpy.swift */; };
 		E4C4CC5B2D2929F8004EA2FF /* TimeSlotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC5A2D2929F8004EA2FF /* TimeSlotsView.swift */; };
 		E4C4CC5D2D293D76004EA2FF /* InlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C4CC5C2D293D76004EA2FF /* InlineButton.swift */; };
@@ -201,6 +204,9 @@
 		E4807A882D2AF5C900FA2CC2 /* PaymentRepositorySpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRepositorySpy.swift; sourceTree = "<group>"; };
 		E4807A8C2D2AFE2300FA2CC2 /* ParkingDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		E4807A8E2D2B1B1600FA2CC2 /* WelcomeViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewUITests.swift; sourceTree = "<group>"; };
+		E48BC34A2D2BC6B700AA3F0B /* RemainingTimeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainingTimeViewModel.swift; sourceTree = "<group>"; };
+		E48BC34C2D2BC6BF00AA3F0B /* RemainingTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainingTimeView.swift; sourceTree = "<group>"; };
+		E48BC3502D2BC87A00AA3F0B /* RemainingTimeViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemainingTimeViewModelProtocol.swift; sourceTree = "<group>"; };
 		E4C4CC562D2918FB004EA2FF /* URLOpenerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = URLOpenerSpy.swift; path = ParkAround/Tests/TestDoubles/Spies/URLOpenerSpy.swift; sourceTree = SOURCE_ROOT; };
 		E4C4CC5A2D2929F8004EA2FF /* TimeSlotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotsView.swift; sourceTree = "<group>"; };
 		E4C4CC5C2D293D76004EA2FF /* InlineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineButton.swift; sourceTree = "<group>"; };
@@ -487,6 +493,7 @@
 		E47090BE2D2301EB005C3F43 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				E48BC3492D2BC69800AA3F0B /* RemainingTime */,
 				E412AA8E2D2AA6970082E260 /* ParkingDetailsSheetView */,
 				E4E2CDDC2D253F0400ABC583 /* ParkingSpotsMap */,
 				E47090BF2D2301F3005C3F43 /* Search */,
@@ -951,6 +958,16 @@
 			path = ParkingDetailsTests;
 			sourceTree = "<group>";
 		};
+		E48BC3492D2BC69800AA3F0B /* RemainingTime */ = {
+			isa = PBXGroup;
+			children = (
+				E48BC34A2D2BC6B700AA3F0B /* RemainingTimeViewModel.swift */,
+				E48BC34C2D2BC6BF00AA3F0B /* RemainingTimeView.swift */,
+				E48BC3502D2BC87A00AA3F0B /* RemainingTimeViewModelProtocol.swift */,
+			);
+			path = RemainingTime;
+			sourceTree = "<group>";
+		};
 		E4C4CC582D2929CD004EA2FF /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -1243,12 +1260,15 @@
 				E47090DA2D2303CB005C3F43 /* NetworkClient.swift in Sources */,
 				E42353062D27BE4F003E28D8 /* ParkingDetailsView.swift in Sources */,
 				E4E2CDC92D2520F300ABC583 /* Routes.swift in Sources */,
+				E48BC34D2D2BC6BF00AA3F0B /* RemainingTimeView.swift in Sources */,
 				E412AA8D2D2A90F50082E260 /* LoadingOverlay.swift in Sources */,
 				E4E2CDD72D25346C00ABC583 /* LocationDisabledView.swift in Sources */,
 				E47091222D23B01C005C3F43 /* ParkingRepositorySpy.swift in Sources */,
+				E48BC34B2D2BC6B700AA3F0B /* RemainingTimeViewModel.swift in Sources */,
 				E4E2CDEA2D2559BD00ABC583 /* TimerManagerProtocol.swift in Sources */,
 				E47091442D23CD52005C3F43 /* ParkingDetailsStub.swift in Sources */,
 				E47091122D23AAF2005C3F43 /* ParkingServiceProtocol.swift in Sources */,
+				E48BC3512D2BC87A00AA3F0B /* RemainingTimeViewModelProtocol.swift in Sources */,
 				E4C4CCC12D2A6280004EA2FF /* FavoriteParkingsViewModelProtocol.swift in Sources */,
 				E4E2CDD42D252F8100ABC583 /* WelcomeViewModelProtocol.swift in Sources */,
 				E412AA902D2AA6B30082E260 /* ParkingDetailsSheetView.swift in Sources */,

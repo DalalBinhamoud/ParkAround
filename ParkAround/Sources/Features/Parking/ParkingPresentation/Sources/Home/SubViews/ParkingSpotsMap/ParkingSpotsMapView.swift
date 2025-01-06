@@ -21,7 +21,6 @@ struct ParkingSpotsMapView<ViewModel>: View where ViewModel: ParkingSpotsMapView
     @State private var networkMonitor = NetworkMonitor()
 
     // MARK: - Map Config
-    //    private let RiyadhRegion = CLLocationCoordinate2D(latitude: 24.774265, longitude: 46.738586)
     private let RiyadhRegion = CLLocationCoordinate2D(latitude: 24.7519539, longitude: 46.6421894)
     @State private var position: MapCameraPosition = .userLocation(fallback: .automatic)
 
@@ -49,15 +48,14 @@ struct ParkingSpotsMapView<ViewModel>: View where ViewModel: ParkingSpotsMapView
                     LoadingOverlay()
                 }
             }
-            .accessibilityElement(children: .combine)
-            .accessibilityIdentifier(ViewIdentifiers.view)
             .navigationDestination(isPresented: $navigateToDetails) {
                 // TODO: handle optional
                 ParkingDetailsView(
                     viewModel: ParkingDetailsViewModel(
                         parkingDetails: selectedParking ?? ParkingDetails.StubFactory.make(),
                         parkingRepository: viewModel.parkingRepository,
-                        paymentRepository: viewModel.paymentRepository
+                        paymentRepository: viewModel.paymentRepository,
+                        sessionManager: viewModel.sessionManager
                     )
                 )
             }
@@ -102,7 +100,6 @@ extension ParkingSpotsMapView {
                     }
                 }
             }
-            .accessibilityIdentifier(ViewIdentifiers.mapView)
             .sheet(isPresented: $isSheetPresented) {
                 ParkingDetailsSheetView(details: selectedParking ??  ParkingDetails.StubFactory.make()) {
                     withAnimation {
@@ -128,7 +125,6 @@ extension ParkingSpotsMapView {
                 .resizable()
                 .frame(width: Constants.userLocationIcon , height: Constants.userLocationIcon)
         })
-        .accessibilityIdentifier(ViewIdentifiers.Button.userLocation)
         .padding(Spacing.medium)
     }
 }

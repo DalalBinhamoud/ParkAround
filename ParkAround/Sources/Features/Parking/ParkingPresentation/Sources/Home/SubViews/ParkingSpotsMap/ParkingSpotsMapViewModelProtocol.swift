@@ -13,6 +13,7 @@ protocol ParkingSpotsMapViewModelProtocol: ObservableObject {
     var parkingSpots: [ParkingDetails] { get }
     var parkingRepository: ParkingRepositoryProtocol { get }
     var paymentRepository: PaymentRepositoryProtocol { get }
+    var sessionManager: ActiveSessionManagerProtocol { get }
     var modelContext: ModelContext? {get }
 
     func onAppear() async

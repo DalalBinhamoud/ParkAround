@@ -29,23 +29,22 @@ struct WelcomeView<ViewModel> : View where ViewModel: WelcomeViewModelProtocol {
                     .resizable()
                     .scaledToFit()
                     .padding(Spacing.medium)
-                    .accessibilityIdentifier(ViewIdentifiers.Icon.logo)
+
 
                 Text("Find nearby paid parking and details you need at your fingertips!")
                     .foregroundStyle(Colors.text)
                     .font(Fonts.heading)
                     .lineSpacing(Spacing.small)
-                    .accessibilityIdentifier(ViewIdentifiers.Text.slogan)
+
 
                 Spacer()
 
                 PrimaryButton(label: "Let's Start", action: {
                     viewModel.onContinue()
                 })
-                .accessibilityIdentifier(ViewIdentifiers.Button.onContinue)
+
             }
-            .accessibilityElement(children: .combine)
-            .accessibilityIdentifier(ViewIdentifiers.view)
+         
             .padding(Spacing.large)
         }
     }

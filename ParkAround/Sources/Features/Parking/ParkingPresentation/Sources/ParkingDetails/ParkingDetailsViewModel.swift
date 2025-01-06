@@ -19,7 +19,7 @@ class ParkingDetailsViewModel: ParkingDetailsViewModelProtocol {
         parkingDetails.parkingStatus == .occupied || isLoading
     }
 
-    private let sessionManager: ActiveSessionManagerProtocol = ActiveSessionManager()
+    private let sessionManager: ActiveSessionManagerProtocol
     var alertContent = AlertContent(title: "", message: "")
 
     var totalPrice: Double {
@@ -35,11 +35,13 @@ class ParkingDetailsViewModel: ParkingDetailsViewModelProtocol {
     init(
         parkingDetails: ParkingDetails,
         parkingRepository: ParkingRepositoryProtocol,
-        paymentRepository: PaymentRepositoryProtocol
+        paymentRepository: PaymentRepositoryProtocol,
+        sessionManager: ActiveSessionManagerProtocol
         ) {
         self.parkingDetails = parkingDetails
         self.parkingRepository = parkingRepository
         self.paymentRepository = paymentRepository
+        self.sessionManager = sessionManager
     }
 
     // TODO: avoid breaking SRP

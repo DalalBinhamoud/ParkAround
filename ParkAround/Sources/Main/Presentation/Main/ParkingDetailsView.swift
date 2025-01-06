@@ -13,6 +13,8 @@ struct ParkingDetailsView<ViewModel>: View where ViewModel: ParkingDetailsViewMo
     @StateObject private var viewModel: ViewModel
     @State private var isAddedToFavorite = false
 
+//    var onBack: () -> Void // TODO: move to ViewModel
+
     // MARK: - Init
     init(viewModel: ViewModel) {
         _viewModel = .init(wrappedValue: viewModel)
@@ -36,7 +38,6 @@ struct ParkingDetailsView<ViewModel>: View where ViewModel: ParkingDetailsViewMo
                         .padding(.vertical, Spacing.large)
 
                     Divider()
-                    Divider()
                         .frame(height: 2)
                         .background(Colors.text)
 
@@ -53,8 +54,6 @@ struct ParkingDetailsView<ViewModel>: View where ViewModel: ParkingDetailsViewMo
                 LoadingOverlay()
             }
         }
-        .accessibilityElement(children: .combine)
-        .accessibilityIdentifier(ViewIdentifiers.view)
         .alert(isPresented: $viewModel.isAlertVisible) {
             Alert(
                 title: Text(viewModel.alertContent.title),
@@ -74,7 +73,7 @@ extension ParkingDetailsView {
                 .foregroundStyle(Colors.text)
                 .font(Fonts.heading)
                 .padding(.bottom, Spacing.medium)
-                .accessibilityIdentifier(ViewIdentifiers.Text.name)
+
 
             HStack(alignment: .top) {
 
@@ -85,18 +84,16 @@ extension ParkingDetailsView {
                         .padding(Spacing.tiny)
                         .background(viewModel.parkingDetails.parkingStatus.backgroundColor)
                         .cornerRadius(CornerRadius.large)
-                        .accessibilityIdentifier(ViewIdentifiers.Text.status)
+
 
                     MakeRow(imageName: "mappin.and.ellipse", title: viewModel.parkingDetails.address.description)
-                        .accessibilityIdentifier(ViewIdentifiers.Text.description)
+
 
                     MakeRow(imageName: "parkingsign.circle", title: "\(viewModel.parkingDetails.availableSpots)/\(viewModel.parkingDetails.totalSpots) Total spots available")
 
                     MakeRow(imageName: "dollarsign.circle", title: "\(viewModel.parkingDetails.costPerHour) SAR /h")
-                        .accessibilityIdentifier(ViewIdentifiers.Text.cost)
 
                     MakeRow(imageName: viewModel.getRateIcon(), title: "\(viewModel.parkingDetails.rate) /5.00")
-                        .accessibilityIdentifier(ViewIdentifiers.Text.rate)
 
                 }
 
@@ -110,7 +107,6 @@ extension ParkingDetailsView {
                         .resizable()
                         .frame(width: IconSize.small, height: IconSize.small)
                 })
-                .accessibilityIdentifier(ViewIdentifiers.Button.addToFavorite)
 
             }
         }
@@ -122,13 +118,13 @@ extension ParkingDetailsView {
                 Text("Amount to pay:")
                     .foregroundStyle(Colors.text)
                     .font(Fonts.subheading)
-                    .accessibilityIdentifier(ViewIdentifiers.Text.amountToPay)
+
 
                 Spacer()
 
                 Text("\(viewModel.totalPrice, specifier: "%.2f") SAR")
                     .font(Fonts.subheading)
-                    .accessibilityIdentifier(ViewIdentifiers.Text.totalPrice)
+
             }
 
 
@@ -141,7 +137,6 @@ extension ParkingDetailsView {
                 }
             })
             .disabled(viewModel.isButtonDisabled)
-            accessibilityIdentifier(ViewIdentifiers.Button.pay)
             if viewModel.parkingDetails.parkingStatus == .occupied {
                 Text("You can't reserve and pay for occupied parking spot")
                     .font(Fonts.caption)

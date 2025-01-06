@@ -16,6 +16,7 @@ class AppCoordinator: ObservableObject {
     private(set) var applicationService = AppComponent.applicationService
     private(set) var apiService = AppComponent.apiService
     private(set) var parkingService: ParkingServiceProtocol
+    private(set) var sessionManager: ActiveSessionManagerProtocol = ActiveSessionManager()
 
     init() {
         self.parkingService = ParkingService(serviceProvider: AppComponent.apiService)

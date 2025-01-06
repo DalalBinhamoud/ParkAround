@@ -27,13 +27,13 @@ struct HomeCoordinatorView: View {
                 VStack {
                     // MARK: - Header
                     HStack {
-                        
+
                         Button(action: {
                             homeCoordinator.navigateTo(HomeRoute.favoriteParkings)
                         }, label: {
                             Image(systemName: "heart.fill")
                         })
-                        
+
                         ParkingSearchView(searchQuery: $searchQuery)
                             .padding(.vertical)
 
@@ -47,7 +47,9 @@ struct HomeCoordinatorView: View {
                         })
                     }
                     .padding(.horizontal)
-                    
+
+                    RemainingTimeView(viewModel: RemainingTimeViewModel(sessionManager: homeCoordinator.sessionManager))
+
                     // MARK: - Map
                     ParkingSpotsMapView(
                         searchQuery: $searchQuery,
@@ -55,27 +57,39 @@ struct HomeCoordinatorView: View {
                             applicationService: homeCoordinator.applicationService,
                             parkingRepository: homeCoordinator.parkingRepository,
                             paymentRepository: homeCoordinator.paymentRepository,
+                            sessionManager: homeCoordinator.sessionManager,
                             modelContext: modelContext
                         )
+
                     )
-                }
-                .navigationDestination(for: HomeRoute.self) { route in
-                    switch route {
-                    case .parkings:
-                        EmptyView()
-                    case .parkingDetails(let info):
-                        Text("\(info.name)")
-                    case .reservationHistory:
-                        ReservationsHistoryView(
-                            viewModel:
-                                ReservationsHistoryViewModel(parkingRepository: homeCoordinator.parkingRepository)
-                        )
-                    case .favoriteParkings:
-                        FavoriteParkingsView(
-                            viewModel: FavoriteParkingsViewModel(parkingRepository: homeCoordinator.parkingRepository)
-                        )
+                    .navigationDestination(for: HomeRoute.self) { route in
+                        switch route {
+                        case .parkings:
+                            EmptyView()
+                        case .parkingDetails(let info): // TODO: after navigation enhancement
+                            ParkingDetailsView(
+                                viewModel: ParkingDetailsViewModel(
+                                    parkingDetails: info,
+                                    parkingRepository: homeCoordinator.parkingRepository,
+                                    paymentRepository: homeCoordinator.paymentRepository,
+                                    sessionManager: homeCoordinator.sessionManager
+                                )
+                            )
+                            //                            {
+                            //                                homeCoordinator.navigationPath.removeLast()
+                            //                            }
+                        case .reservationHistory:
+                            ReservationsHistoryView(
+                                viewModel:
+                                    ReservationsHistoryViewModel(parkingRepository: homeCoordinator.parkingRepository)
+                            )
+                        case .favoriteParkings:
+                            FavoriteParkingsView(
+                                viewModel: FavoriteParkingsViewModel(parkingRepository: homeCoordinator.parkingRepository)
+                            )
+                        }
+
                     }
-                    
                 }
             }
         }
