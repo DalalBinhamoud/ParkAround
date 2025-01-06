@@ -28,6 +28,16 @@
 In order to use the app, you must grant location access permission.
 
 
+## Architecture and design decisions
+
+The app partially adopts the MVVM-Coordinator and Clean Architecture patterns to balance modularity and simplicity:
+
+- **MVVM-Coordinator:** ViewModel handles business logic, View handles UI, and Coordinator manages navigation to decouple flows
+
+- **Clean Architecture:** Layers for Domain (business logic), Data (Services and repositories), and Presentation (UI). Simplified to avoid overengineering.
+This approach improves testability, scalability, and maintainability of the app
+
+
 
 ## Future Enhancement
 
