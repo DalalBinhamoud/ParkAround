@@ -29,7 +29,6 @@ class NotificationManager: NotificationManagerProtocol {
 
         // schedule notificate to be displayed 5 minutes before expiration
         let triggerTime = remainingTime - 300
-//        let triggerTime = remainingTime - 20
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: triggerTime, repeats: false)
         let request = UNNotificationRequest(identifier: "SessionExpiration", content: content, trigger: trigger)
 

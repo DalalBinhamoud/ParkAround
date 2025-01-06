@@ -1,7 +1,7 @@
 # Park Around
 
 
-"Park Around" is an iOS application designed to simplify finding and reserving nearby parking spots. compatiable with iOS 17 and later.
+"Park Around" is an iOS application designed to simplify finding and reserving nearby parking spots. compatiable with iOS 17 and later. It saves user's reservations history and favorite locatinos data in SwiftData so it can be accessed offline. Also, it supports light/dark mode
 
 ## Build and Run Instructions
 
@@ -34,6 +34,8 @@ In order to use the app, you must grant location access permission.
 🚀 **General Improvements**
 
 - **Support Swift 6:** Prepare the project to be compatible with Swift 6.
+
+- **Increase Test Coverage:** add more unit and UI tests.
 
 - **SwiftLint Integration:** Add SwiftLint to enforce consistent coding standards.
 
