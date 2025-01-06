@@ -62,5 +62,5 @@ In order to use the app, you must grant location access permission.
 - **Heatmap Support:** Add a heatmap to visualize parking occupancy levels.
 ## Screenshots
 
-![App Screenshot](ParkAround/Assets.xcassets/roadmap.png)
+![App Screenshot](ParkAround/Assets.xcassets/roadmap.imageset/roadmap.png)
 
